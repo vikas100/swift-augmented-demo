@@ -9,9 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet var imagePainter: CBImagePainter!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imagePainter.loadImage(UIImage(named:"living-room-1-masked"), hasAlphaMasking: false);
         // Do any additional setup after loading the view, typically from a nib.
     }
 
