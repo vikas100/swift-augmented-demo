@@ -1,14 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D113c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D113c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ic4-qa-lVr">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="bKG-6g-8bZ">
+            <objects>
+                <viewController id="Ic4-qa-lVr" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mo5-oX-HUH"/>
+                        <viewControllerLayoutGuide type="bottom" id="hC9-sg-COT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eue-XS-cFI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0l6-vw-LTj">
+                                <rect key="frame" x="232" y="246" width="136" height="40"/>
+                                <state key="normal" title="Open Still Visualizer">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="DWL-1E-TS9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UhY-Ei-f8e">
+                                <rect key="frame" x="214" y="316" width="172" height="30"/>
+                                <state key="normal" title="Open Augmented Reality">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="e6a-78-6ux" kind="show" id="Gor-Z0-Uwz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="UhY-Ei-f8e" secondAttribute="centerX" id="DBZ-Mr-Vhk"/>
+                            <constraint firstItem="UhY-Ei-f8e" firstAttribute="top" secondItem="0l6-vw-LTj" secondAttribute="bottom" constant="30" id="f9D-3c-42Z"/>
+                            <constraint firstAttribute="centerX" secondItem="0l6-vw-LTj" secondAttribute="centerX" id="t0T-9c-efp"/>
+                            <constraint firstItem="0l6-vw-LTj" firstAttribute="top" secondItem="Mo5-oX-HUH" secondAttribute="bottom" constant="226" id="wX6-f9-hZK"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xyo-hQ-j11" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-214" y="-133"/>
+        </scene>
+        <!--Still View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftAugmentedDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="StillViewController" customModule="SwiftAugmentedDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -19,11 +63,30 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="imagePainter" destination="8bC-Xf-vdC" id="jMt-yD-Kdf"/>
+                        <outlet property="imagePainter" destination="8bC-Xf-vdC" id="IuN-xs-8BV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="952" y="-512"/>
+        </scene>
+        <!--Augmented View Controller-->
+        <scene sceneID="UAe-bt-HDw">
+            <objects>
+                <viewController id="e6a-78-6ux" customClass="AugmentedViewController" customModule="SwiftAugmentedDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="27o-bO-qQJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="cxz-eq-uhN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dan-i3-Uoo" userLabel="Video Painter View">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xJo-Fv-1wp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="952" y="298"/>
         </scene>
     </scenes>
 </document>

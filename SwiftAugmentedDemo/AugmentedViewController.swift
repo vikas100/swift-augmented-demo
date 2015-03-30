@@ -8,15 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AugmentedViewController: UIViewController {
     
-    @IBOutlet var imagePainter: CBImagePainter!
+    @IBOutlet var videoPainter: CBVideoPainter!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imagePainter.loadImage(UIImage(named:"living-room-1-masked"), hasAlphaMasking: false);
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 

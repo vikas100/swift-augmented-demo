@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E7FE55BB1AC5FA740084C8BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE55BA1AC5FA740084C8BB /* AppDelegate.swift */; };
-		E7FE55BD1AC5FA740084C8BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE55BC1AC5FA740084C8BB /* ViewController.swift */; };
+		E7FE55BD1AC5FA740084C8BB /* StillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE55BC1AC5FA740084C8BB /* StillViewController.swift */; };
 		E7FE55C01AC5FA740084C8BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7FE55BE1AC5FA740084C8BB /* Main.storyboard */; };
 		E7FE55C21AC5FA740084C8BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7FE55C11AC5FA740084C8BB /* Images.xcassets */; };
 		E7FE55C51AC5FA740084C8BB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FE55C31AC5FA740084C8BB /* LaunchScreen.xib */; };
@@ -18,13 +18,17 @@
 		E7FE55F51AC60AD30084C8BB /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE55F41AC60AD30084C8BB /* libc++.dylib */; };
 		E7FE55F91AC60FEB0084C8BB /* living-room-1-masked.png in Resources */ = {isa = PBXBuildFile; fileRef = E7FE55F71AC60FEB0084C8BB /* living-room-1-masked.png */; };
 		E7FE55FA1AC60FEB0084C8BB /* shutterstock_13368892.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E7FE55F81AC60FEB0084C8BB /* shutterstock_13368892.jpg */; };
+		E7FE55FC1AC8E9950084C8BB /* AugmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE55FB1AC8E9950084C8BB /* AugmentedViewController.swift */; };
+		E7FE560F1AC8ED240084C8BB /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE560E1AC8ED240084C8BB /* CoreMotion.framework */; };
+		E7FE56111AC8ED2C0084C8BB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE56101AC8ED2C0084C8BB /* AVFoundation.framework */; };
+		E7FE561B1AC8EF160084C8BB /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE561A1AC8EF160084C8BB /* ImageIO.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E7FE55B51AC5FA740084C8BB /* SwiftAugmentedDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftAugmentedDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7FE55B91AC5FA740084C8BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7FE55BA1AC5FA740084C8BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E7FE55BC1AC5FA740084C8BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E7FE55BC1AC5FA740084C8BB /* StillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StillViewController.swift; sourceTree = "<group>"; };
 		E7FE55BF1AC5FA740084C8BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7FE55C11AC5FA740084C8BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E7FE55C41AC5FA740084C8BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -35,6 +39,12 @@
 		E7FE55F41AC60AD30084C8BB /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		E7FE55F71AC60FEB0084C8BB /* living-room-1-masked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "living-room-1-masked.png"; sourceTree = "<group>"; };
 		E7FE55F81AC60FEB0084C8BB /* shutterstock_13368892.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shutterstock_13368892.jpg; sourceTree = "<group>"; };
+		E7FE55FB1AC8E9950084C8BB /* AugmentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AugmentedViewController.swift; sourceTree = "<group>"; };
+		E7FE560E1AC8ED240084C8BB /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		E7FE56101AC8ED2C0084C8BB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E7FE56161AC8EEA70084C8BB /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		E7FE56181AC8EEE50084C8BB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E7FE561A1AC8EF160084C8BB /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +52,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7FE561B1AC8EF160084C8BB /* ImageIO.framework in Frameworks */,
+				E7FE56111AC8ED2C0084C8BB /* AVFoundation.framework in Frameworks */,
+				E7FE560F1AC8ED240084C8BB /* CoreMotion.framework in Frameworks */,
 				E7FE55F51AC60AD30084C8BB /* libc++.dylib in Frameworks */,
 				E7FE55F31AC60AAD0084C8BB /* Accelerate.framework in Frameworks */,
 				E7FE55F11AC604560084C8BB /* opencv2.framework in Frameworks */,
@@ -55,6 +68,9 @@
 		E7FE55AC1AC5FA740084C8BB = {
 			isa = PBXGroup;
 			children = (
+				E7FE561A1AC8EF160084C8BB /* ImageIO.framework */,
+				E7FE56181AC8EEE50084C8BB /* CoreGraphics.framework */,
+				E7FE56161AC8EEA70084C8BB /* CoreImage.framework */,
 				E7FE55B71AC5FA740084C8BB /* SwiftAugmentedDemo */,
 				E7FE55B61AC5FA740084C8BB /* Products */,
 			);
@@ -74,7 +90,8 @@
 				E7FE55F61AC60FEB0084C8BB /* Rooms */,
 				E7FE55E71AC602320084C8BB /* Bridging-Header.h */,
 				E7FE55BA1AC5FA740084C8BB /* AppDelegate.swift */,
-				E7FE55BC1AC5FA740084C8BB /* ViewController.swift */,
+				E7FE55BC1AC5FA740084C8BB /* StillViewController.swift */,
+				E7FE55FB1AC8E9950084C8BB /* AugmentedViewController.swift */,
 				E7FE55BE1AC5FA740084C8BB /* Main.storyboard */,
 				E7FE55C11AC5FA740084C8BB /* Images.xcassets */,
 				E7FE55C31AC5FA740084C8BB /* LaunchScreen.xib */,
@@ -95,6 +112,8 @@
 		E7FE55ED1AC604560084C8BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E7FE56101AC8ED2C0084C8BB /* AVFoundation.framework */,
+				E7FE560E1AC8ED240084C8BB /* CoreMotion.framework */,
 				E7FE55F41AC60AD30084C8BB /* libc++.dylib */,
 				E7FE55F21AC60AAD0084C8BB /* Accelerate.framework */,
 				E7FE55EE1AC604560084C8BB /* HomeAugmentation.framework */,
@@ -184,7 +203,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7FE55BD1AC5FA740084C8BB /* ViewController.swift in Sources */,
+				E7FE55BD1AC5FA740084C8BB /* StillViewController.swift in Sources */,
+				E7FE55FC1AC8E9950084C8BB /* AugmentedViewController.swift in Sources */,
 				E7FE55BB1AC5FA740084C8BB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
