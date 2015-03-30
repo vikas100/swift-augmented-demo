@@ -7,17 +7,27 @@
 //
 
 import UIKit
+import AVFoundation
 
-class AugmentedViewController: UIViewController {
+class AugmentedViewController: UIViewController, CBVideoDeviceDelegate {
     
-    @IBOutlet var videoPainter: CBVideoPainter!
+    var videoPainter: CBVideoPainter!
     
+    @IBOutlet weak var augmentedView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        videoPainter = CBVideoPainter(cameraAtPosition: AVCaptureDevicePosition.Back, delegate: self);
         
-        
+        videoPainter.output = augmentedView;
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        
+        videoPainter.startRunning();
     }
 
     override func didReceiveMemoryWarning() {

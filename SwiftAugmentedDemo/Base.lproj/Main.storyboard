@@ -83,6 +83,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="augmentedView" destination="dan-i3-Uoo" id="Abd-ev-hh4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xJo-Fv-1wp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
