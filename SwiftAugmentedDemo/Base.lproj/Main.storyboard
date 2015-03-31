@@ -171,13 +171,36 @@
                         <viewControllerLayoutGuide type="top" id="27o-bO-qQJ"/>
                         <viewControllerLayoutGuide type="bottom" id="cxz-eq-uhN"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="dan-i3-Uoo" userLabel="Video Painter View">
+                    <view key="view" contentMode="scaleToFill" id="79j-jE-OVE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cjr-RR-OdQ" userLabel="Augmented View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMf-nS-t4T">
+                                <rect key="frame" x="238" y="550" width="123" height="30"/>
+                                <state key="normal" title="Clear Paint Points">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearPointsClicked:" destination="e6a-78-6ux" eventType="touchUpInside" id="8Bh-9L-kCY"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Cjr-RR-OdQ" firstAttribute="top" secondItem="79j-jE-OVE" secondAttribute="top" id="7BP-wY-Fg9"/>
+                            <constraint firstItem="Cjr-RR-OdQ" firstAttribute="bottom" secondItem="cxz-eq-uhN" secondAttribute="top" id="S6v-kL-eKV"/>
+                            <constraint firstItem="cxz-eq-uhN" firstAttribute="top" secondItem="iMf-nS-t4T" secondAttribute="bottom" constant="20" id="WJ5-Rn-aLU"/>
+                            <constraint firstItem="iMf-nS-t4T" firstAttribute="centerX" secondItem="Cjr-RR-OdQ" secondAttribute="centerX" id="jRi-KL-bP3"/>
+                            <constraint firstAttribute="trailing" secondItem="Cjr-RR-OdQ" secondAttribute="trailing" id="nse-Ro-VPO"/>
+                            <constraint firstItem="Cjr-RR-OdQ" firstAttribute="leading" secondItem="79j-jE-OVE" secondAttribute="leading" id="xSs-Oh-npK"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="augmentedView" destination="dan-i3-Uoo" id="Abd-ev-hh4"/>
+                        <outlet property="augmentedView" destination="Cjr-RR-OdQ" id="85k-CC-hfu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xJo-Fv-1wp" userLabel="First Responder" sceneMemberID="firstResponder"/>

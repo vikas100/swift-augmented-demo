@@ -18,23 +18,21 @@ class AugmentedViewController: UIViewController, CBVideoDeviceDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        videoPainter = CBVideoPainter(cameraAtPosition: AVCaptureDevicePosition.Back, delegate: self);
+        videoPainter = CBVideoPainter(cameraAtPosition: AVCaptureDevicePosition.Back, delegate: self)
         
-        videoPainter.output = augmentedView;
+        videoPainter.output = augmentedView
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
         
-        videoPainter.startRunning();
+        videoPainter.startRunning()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func clearPointsClicked(sender: AnyObject) {
+        videoPainter.clearPaintPoints()
     }
-
-
+    
 }
 
