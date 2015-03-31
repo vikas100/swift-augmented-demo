@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D113c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ic4-qa-lVr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D113c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8ma-E7-OMK">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
@@ -44,10 +44,11 @@
                             <constraint firstItem="0l6-vw-LTj" firstAttribute="top" secondItem="Mo5-oX-HUH" secondAttribute="bottom" constant="226" id="wX6-f9-hZK"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="4bo-Be-rgD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xyo-hQ-j11" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-214" y="-133"/>
+            <point key="canvasLocation" x="598" y="-133"/>
         </scene>
         <!--Still View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -57,18 +58,110 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="CBImagePainter">
+                    <view key="view" contentMode="scaleToFill" id="Lgc-8D-9lX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ZW-eR-nls" userLabel="ImagePainter" customClass="CBImagePainter">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y1Y-3K-38t" userLabel="Accessory Toolbar">
+                                <rect key="frame" x="0.0" y="67" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem enabled="NO" title="Cancel" id="MFd-9m-bHn">
+                                        <connections>
+                                            <action selector="decommitClicked:" destination="BYZ-38-t0r" id="P66-Lq-utr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="2Zo-02-96T"/>
+                                    <barButtonItem enabled="NO" title="Accept" id="DKa-A8-1f8">
+                                        <connections>
+                                            <action selector="commitClicked:" destination="BYZ-38-t0r" id="Iju-X9-9g3"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="LCi-iJ-Aso"/>
+                                    <barButtonItem title="Change Color:" id="Y5P-Ly-a0v">
+                                        <connections>
+                                            <action selector="changeColorClicked:" destination="BYZ-38-t0r" id="Yo9-9B-3fi"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="YHr-ZF-Lv8">
+                                        <view key="customView" contentMode="scaleToFill" id="3OK-vz-WXr">
+                                            <rect key="frame" x="554" y="5.5" width="30" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zpk-5f-tSQ" userLabel="Main Tools">
+                                <rect key="frame" x="0.0" y="555" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Get Image" id="C0V-Ke-abe">
+                                        <connections>
+                                            <action selector="getImage" destination="BYZ-38-t0r" id="bxX-NS-ria"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="W1N-Y9-b6W"/>
+                                    <barButtonItem enabled="NO" title="Undo" id="sea-Rn-Q1t">
+                                        <connections>
+                                            <action selector="undoClicked:" destination="BYZ-38-t0r" id="zai-AZ-OiR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="cR0-GP-fLV"/>
+                                    <barButtonItem title="Tool" id="jN3-6n-BdR">
+                                        <connections>
+                                            <action selector="changeTool" destination="BYZ-38-t0r" id="I9y-dw-lvm"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ccR-Fq-FdV"/>
+                                    <barButtonItem title="Save" id="lCY-bQ-oTG">
+                                        <connections>
+                                            <action selector="saveClicked:" destination="BYZ-38-t0r" id="HYR-c4-oU8"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ktQ-lv-jKI"/>
+                                    <barButtonItem title="Load" id="XrF-4f-RUc">
+                                        <connections>
+                                            <action selector="loadClicked:" destination="BYZ-38-t0r" id="Nk1-KP-gNb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="e7h-e1-e6o"/>
+                                    <barButtonItem title="Share" id="dCq-Gf-5kx">
+                                        <connections>
+                                            <action selector="shareClicked:" destination="BYZ-38-t0r" id="c7f-y6-D6r"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7ZW-eR-nls" firstAttribute="leading" secondItem="Lgc-8D-9lX" secondAttribute="leading" id="46o-uq-hx3"/>
+                            <constraint firstAttribute="width" secondItem="Zpk-5f-tSQ" secondAttribute="width" id="AlK-iI-jWv"/>
+                            <constraint firstItem="7ZW-eR-nls" firstAttribute="top" secondItem="Lgc-8D-9lX" secondAttribute="top" id="F7K-Qr-v7b"/>
+                            <constraint firstAttribute="trailing" secondItem="7ZW-eR-nls" secondAttribute="trailing" id="NEH-n6-UId"/>
+                            <constraint firstItem="Y1Y-3K-38t" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Rje-dN-DPD"/>
+                            <constraint firstItem="Y1Y-3K-38t" firstAttribute="leading" secondItem="Zpk-5f-tSQ" secondAttribute="leading" id="hoh-d6-ZcB"/>
+                            <constraint firstAttribute="centerX" secondItem="Y1Y-3K-38t" secondAttribute="centerX" id="lb5-7L-CbN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Zpk-5f-tSQ" secondAttribute="bottom" id="rvV-Fx-zme"/>
+                            <constraint firstAttribute="centerX" secondItem="Zpk-5f-tSQ" secondAttribute="centerX" id="vKH-jJ-fCU"/>
+                            <constraint firstItem="7ZW-eR-nls" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="wv6-X0-gaa"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="imagePainter" destination="8bC-Xf-vdC" id="IuN-xs-8BV"/>
+                        <outlet property="colorButton" destination="Y5P-Ly-a0v" id="D8T-PM-H19"/>
+                        <outlet property="commitButton" destination="DKa-A8-1f8" id="To2-gU-vO5"/>
+                        <outlet property="currentColorView" destination="3OK-vz-WXr" id="J6s-pT-r2J"/>
+                        <outlet property="decommitButton" destination="MFd-9m-bHn" id="rc4-OH-3AC"/>
+                        <outlet property="imagePainter" destination="7ZW-eR-nls" id="IaX-RO-Kw1"/>
+                        <outlet property="undoButton" destination="sea-Rn-Q1t" id="ep9-3y-O6A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="952" y="-512"/>
+            <point key="canvasLocation" x="1764" y="-512"/>
         </scene>
         <!--Augmented View Controller-->
         <scene sceneID="UAe-bt-HDw">
@@ -89,7 +182,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xJo-Fv-1wp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="952" y="298"/>
+            <point key="canvasLocation" x="1764" y="298"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uZ0-eX-5ks">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8ma-E7-OMK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fWd-C0-qPS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ic4-qa-lVr" kind="relationship" relationship="rootViewController" id="9BA-PL-35Z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AgW-WC-6SZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-214" y="-133"/>
         </scene>
     </scenes>
 </document>
