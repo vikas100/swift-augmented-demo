@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D113c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8ma-E7-OMK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D127a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8ma-E7-OMK">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
@@ -26,7 +26,7 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="DWL-1E-TS9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UhY-Ei-f8e">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UhY-Ei-f8e">
                                 <rect key="frame" x="214" y="316" width="172" height="30"/>
                                 <state key="normal" title="Open Augmented Reality">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -35,13 +35,24 @@
                                     <segue destination="e6a-78-6ux" kind="show" id="Gor-Z0-Uwz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfm-IW-2H7">
+                                <rect key="frame" x="212" y="377" width="177" height="40"/>
+                                <state key="normal" title="Open Color From Camera">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Gdc-6C-NWE" kind="show" id="z3k-nn-zSC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="UhY-Ei-f8e" secondAttribute="centerX" id="DBZ-Mr-Vhk"/>
-                            <constraint firstItem="UhY-Ei-f8e" firstAttribute="top" secondItem="0l6-vw-LTj" secondAttribute="bottom" constant="30" id="f9D-3c-42Z"/>
-                            <constraint firstAttribute="centerX" secondItem="0l6-vw-LTj" secondAttribute="centerX" id="t0T-9c-efp"/>
-                            <constraint firstItem="0l6-vw-LTj" firstAttribute="top" secondItem="Mo5-oX-HUH" secondAttribute="bottom" constant="226" id="wX6-f9-hZK"/>
+                            <constraint firstAttribute="centerX" secondItem="tfm-IW-2H7" secondAttribute="centerX" constant="-0.5" id="Ffc-VC-ccS"/>
+                            <constraint firstAttribute="centerX" secondItem="UhY-Ei-f8e" secondAttribute="centerX" id="SyM-pS-GsI"/>
+                            <constraint firstItem="tfm-IW-2H7" firstAttribute="top" secondItem="UhY-Ei-f8e" secondAttribute="bottom" constant="31" id="eTr-f8-bny"/>
+                            <constraint firstAttribute="centerY" secondItem="UhY-Ei-f8e" secondAttribute="centerY" constant="-31" id="jpa-V5-gad"/>
+                            <constraint firstAttribute="centerX" secondItem="0l6-vw-LTj" secondAttribute="centerX" id="wIG-VW-dUN"/>
+                            <constraint firstItem="UhY-Ei-f8e" firstAttribute="top" secondItem="0l6-vw-LTj" secondAttribute="bottom" constant="30" id="zdQ-Wp-Sbg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4bo-Be-rgD"/>
@@ -162,6 +173,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1764" y="-512"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cny-gW-f4v">
+            <objects>
+                <viewController id="Gdc-6C-NWE" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HJb-AF-Ckt"/>
+                        <viewControllerLayoutGuide type="bottom" id="4id-zZ-EWC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K3T-Zf-EjL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sb4-Ke-Hb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2534" y="-115"/>
         </scene>
         <!--Augmented View Controller-->
         <scene sceneID="UAe-bt-HDw">

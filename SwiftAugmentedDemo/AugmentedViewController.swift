@@ -18,18 +18,21 @@ class AugmentedViewController: UIViewController, CBVideoDeviceDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //iniitialize a new instance of video painter
         videoPainter = CBVideoPainter(cameraAtPosition: AVCaptureDevicePosition.Back, delegate: self)
         
+        //set its output to the view where we want it displayed
         videoPainter.output = augmentedView
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
         
+        //start running the augmented reality
         videoPainter.startRunning()
     }
     
+    //when clicked, clear all points currently selected
     @IBAction func clearPointsClicked(sender: AnyObject) {
         videoPainter.clearPaintPoints()
     }
