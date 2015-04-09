@@ -32,7 +32,7 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
         picker.allowsEditing = false
         
         //internal paths
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! NSString
         savePath = documentsPath.stringByAppendingPathComponent("projects")
         
         //get project ID, if we have saved once before, otherwise null
@@ -43,6 +43,8 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
         imagePainter.historyChangedBlock = ({
             self.undoButton.enabled = self.imagePainter.canStepBackward
         })
+        
+        imagePainter.contentMode = UIViewContentMode.ScaleAspectFit
         
         //started a click of a tool
         imagePainter.startedToolBlock = ({(toolMode: ToolMode) in
@@ -83,7 +85,7 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
 
     //iPhone camera and library delegate methods
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-        var chosenImage = info[UIImagePickerControllerOriginalImage] as UIImage //2
+        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
         loadImage(chosenImage, hasMasking: false)
         dismissViewControllerAnimated(true, completion: nil) //5
     }
