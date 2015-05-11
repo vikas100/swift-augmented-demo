@@ -23,10 +23,15 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
     var projectID: String!
     
     let picker = UIImagePickerController()
+    
+    deinit {
+        // perform the deinitialization
+        println("deinit StillViewController")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         //set up camera and library
         picker.delegate = self
         picker.allowsEditing = false
@@ -40,20 +45,24 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
         projectID = userDefaults.stringForKey("projectID")
         
         //when the undo history has changed, check to see if we can undo
-        imagePainter.historyChangedBlock = ({
-            self.undoButton.enabled = self.imagePainter.canStepBackward
+        imagePainter.historyChangedBlock = ({[weak self] in
+            if let strongSelf = self {
+                strongSelf.undoButton.enabled = strongSelf.imagePainter.canStepBackward
+            }
         })
         
         imagePainter.contentMode = UIViewContentMode.ScaleAspectFit
         
         //started a click of a tool
-        imagePainter.startedToolBlock = ({(toolMode: ToolMode) in
-            if (toolMode.value == ToolModeRectangle.value) {
-                self.decommitButton.enabled = true
-                self.commitButton.enabled = true
-            } else {
-                self.decommitButton.enabled = false
-                self.commitButton.enabled = false
+        imagePainter.startedToolBlock = ({[weak self] (toolMode: ToolMode) in
+            if let strongSelf = self {
+                if (toolMode.value == ToolModeRectangle.value) {
+                    strongSelf.decommitButton.enabled = true
+                    strongSelf.commitButton.enabled = true
+                } else {
+                    strongSelf.decommitButton.enabled = false
+                    strongSelf.commitButton.enabled = false
+                }
             }
         })
         

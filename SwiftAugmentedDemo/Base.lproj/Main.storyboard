@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D127a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8ma-E7-OMK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14E7f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8ma-E7-OMK">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -174,19 +175,22 @@
             </objects>
             <point key="canvasLocation" x="1764" y="-512"/>
         </scene>
-        <!--View Controller-->
+        <!--Color Picker View Controller-->
         <scene sceneID="cny-gW-f4v">
             <objects>
-                <viewController id="Gdc-6C-NWE" sceneMemberID="viewController">
+                <viewController id="Gdc-6C-NWE" customClass="ColorPickerViewController" customModule="SwiftAugmentedDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HJb-AF-Ckt"/>
                         <viewControllerLayoutGuide type="bottom" id="4id-zZ-EWC"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="K3T-Zf-EjL">
+                    <view key="view" contentMode="scaleToFill" id="K3T-Zf-EjL" userLabel="View" customClass="CBColorFinder">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="colorFinder" destination="K3T-Zf-EjL" id="gnA-Pe-Vgk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sb4-Ke-Hb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -209,7 +213,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMf-nS-t4T">
-                                <rect key="frame" x="238" y="550" width="123" height="30"/>
+                                <rect key="frame" x="36" y="550" width="123" height="30"/>
                                 <state key="normal" title="Clear Paint Points">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -217,19 +221,38 @@
                                     <action selector="clearPointsClicked:" destination="e6a-78-6ux" eventType="touchUpInside" id="8Bh-9L-kCY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viz-lj-cDy">
+                                <rect key="frame" x="447" y="550" width="116" height="30"/>
+                                <state key="normal" title="Stop Augmented">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopAugmentedReality:" destination="e6a-78-6ux" eventType="touchUpInside" id="oRJ-5j-vYk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="viz-lj-cDy" secondAttribute="trailing" constant="21" id="1Fc-H1-wiv"/>
                             <constraint firstItem="Cjr-RR-OdQ" firstAttribute="top" secondItem="79j-jE-OVE" secondAttribute="top" id="7BP-wY-Fg9"/>
+                            <constraint firstItem="iMf-nS-t4T" firstAttribute="leading" secondItem="79j-jE-OVE" secondAttribute="leadingMargin" constant="20" id="BKp-Kl-uDi"/>
+                            <constraint firstItem="cxz-eq-uhN" firstAttribute="top" secondItem="viz-lj-cDy" secondAttribute="bottom" constant="20" id="GKJ-Gw-Wb8"/>
+                            <constraint firstItem="Cjr-RR-OdQ" firstAttribute="height" secondItem="79j-jE-OVE" secondAttribute="height" id="Ofw-Fy-S2e"/>
                             <constraint firstItem="Cjr-RR-OdQ" firstAttribute="bottom" secondItem="cxz-eq-uhN" secondAttribute="top" id="S6v-kL-eKV"/>
                             <constraint firstItem="cxz-eq-uhN" firstAttribute="top" secondItem="iMf-nS-t4T" secondAttribute="bottom" constant="20" id="WJ5-Rn-aLU"/>
-                            <constraint firstItem="iMf-nS-t4T" firstAttribute="centerX" secondItem="Cjr-RR-OdQ" secondAttribute="centerX" id="jRi-KL-bP3"/>
                             <constraint firstAttribute="trailing" secondItem="Cjr-RR-OdQ" secondAttribute="trailing" id="nse-Ro-VPO"/>
                             <constraint firstItem="Cjr-RR-OdQ" firstAttribute="leading" secondItem="79j-jE-OVE" secondAttribute="leading" id="xSs-Oh-npK"/>
+                            <constraint firstItem="Cjr-RR-OdQ" firstAttribute="width" secondItem="79j-jE-OVE" secondAttribute="width" id="xXu-2q-yQy"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="S6v-kL-eKV"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="augmentedView" destination="Cjr-RR-OdQ" id="85k-CC-hfu"/>
+                        <outlet property="startStopButton" destination="viz-lj-cDy" id="VBp-d9-a4b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xJo-Fv-1wp" userLabel="First Responder" sceneMemberID="firstResponder"/>
