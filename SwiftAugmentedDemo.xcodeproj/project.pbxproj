@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E73C0BD71B00683200AFD166 /* libHomeAugmentation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E73C0BD61B00683200AFD166 /* libHomeAugmentation.a */; };
+		E7C5C0931B1C215000E98293 /* libHomeAugmentation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E73C0BE21B00FFF100AFD166 /* libHomeAugmentation.a */; };
+		E7C5C0941B1C220300E98293 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE561A1AC8EF160084C8BB /* ImageIO.framework */; };
 		E7D623571AEAAE9B003451B5 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D623561AEAAE9B003451B5 /* ColorPickerViewController.swift */; };
 		E7FE55BB1AC5FA740084C8BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE55BA1AC5FA740084C8BB /* AppDelegate.swift */; };
 		E7FE55BD1AC5FA740084C8BB /* StillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE55BC1AC5FA740084C8BB /* StillViewController.swift */; };
@@ -22,12 +23,20 @@
 		E7FE55FC1AC8E9950084C8BB /* AugmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE55FB1AC8E9950084C8BB /* AugmentedViewController.swift */; };
 		E7FE560F1AC8ED240084C8BB /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE560E1AC8ED240084C8BB /* CoreMotion.framework */; };
 		E7FE56111AC8ED2C0084C8BB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE56101AC8ED2C0084C8BB /* AVFoundation.framework */; };
-		E7FE561B1AC8EF160084C8BB /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE561A1AC8EF160084C8BB /* ImageIO.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E73C0BE11B00FFF100AFD166 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E73C0BCD1B0066E900AFD166 /* HomeAugmentation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E79EAD1E19ED87A7004A3ED5;
+			remoteInfo = HomeAugmentation;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E73C0BCD1B0066E900AFD166 /* HomeAugmentation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HomeAugmentation.xcodeproj; path = "../../../../cambrian-ios/HomeAugmentationFramework/HomeAugmentation.xcodeproj"; sourceTree = "<group>"; };
-		E73C0BD61B00683200AFD166 /* libHomeAugmentation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libHomeAugmentation.a; path = "../../cambrian-ios/HomeAugmentationFramework/build/Debug-iphoneos/libHomeAugmentation.a"; sourceTree = "<group>"; };
 		E7D623561AEAAE9B003451B5 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		E7FE55B51AC5FA740084C8BB /* SwiftAugmentedDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftAugmentedDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7FE55B91AC5FA740084C8BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,8 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E73C0BD71B00683200AFD166 /* libHomeAugmentation.a in Frameworks */,
-				E7FE561B1AC8EF160084C8BB /* ImageIO.framework in Frameworks */,
+				E7C5C0941B1C220300E98293 /* ImageIO.framework in Frameworks */,
+				E7C5C0931B1C215000E98293 /* libHomeAugmentation.a in Frameworks */,
 				E7FE56111AC8ED2C0084C8BB /* AVFoundation.framework in Frameworks */,
 				E7FE560F1AC8ED240084C8BB /* CoreMotion.framework in Frameworks */,
 				E7FE55F51AC60AD30084C8BB /* libc++.dylib in Frameworks */,
@@ -68,10 +77,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E73C0BDD1B00FFF100AFD166 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E73C0BE21B00FFF100AFD166 /* libHomeAugmentation.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		E7FE55AC1AC5FA740084C8BB = {
 			isa = PBXGroup;
 			children = (
-				E73C0BD61B00683200AFD166 /* libHomeAugmentation.a */,
 				E7FE55B71AC5FA740084C8BB /* SwiftAugmentedDemo */,
 				E7FE55B61AC5FA740084C8BB /* Products */,
 			);
@@ -181,12 +197,28 @@
 			mainGroup = E7FE55AC1AC5FA740084C8BB;
 			productRefGroup = E7FE55B61AC5FA740084C8BB /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E73C0BDD1B00FFF100AFD166 /* Products */;
+					ProjectRef = E73C0BCD1B0066E900AFD166 /* HomeAugmentation.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				E7FE55B41AC5FA740084C8BB /* SwiftAugmentedDemo */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E73C0BE21B00FFF100AFD166 /* libHomeAugmentation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libHomeAugmentation.a;
+			remoteRef = E73C0BE11B00FFF100AFD166 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E7FE55B31AC5FA740084C8BB /* Resources */ = {

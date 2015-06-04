@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14E7f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8ma-E7-OMK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8ma-E7-OMK">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -107,6 +107,23 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wh7-0G-uf5" userLabel="Zoom Menu">
+                                <rect key="frame" x="0.0" y="113" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Stop Scrolling" id="5pz-bV-X2O">
+                                        <connections>
+                                            <action selector="startStopScrollingClicked:" destination="BYZ-38-t0r" id="Kd9-fo-4qX"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="61y-TQ-nzk"/>
+                                    <barButtonItem title="Zoom Out" id="eaK-zs-tDk">
+                                        <connections>
+                                            <action selector="zoomOutButtonClicked:" destination="BYZ-38-t0r" id="okr-fu-nA6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Uy6-TP-QHt"/>
+                                </items>
+                            </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zpk-5f-tSQ" userLabel="Main Tools">
                                 <rect key="frame" x="0.0" y="555" width="600" height="44"/>
                                 <items>
@@ -153,22 +170,40 @@
                             <constraint firstItem="7ZW-eR-nls" firstAttribute="leading" secondItem="Lgc-8D-9lX" secondAttribute="leading" id="46o-uq-hx3"/>
                             <constraint firstAttribute="width" secondItem="Zpk-5f-tSQ" secondAttribute="width" id="AlK-iI-jWv"/>
                             <constraint firstItem="7ZW-eR-nls" firstAttribute="top" secondItem="Lgc-8D-9lX" secondAttribute="top" id="F7K-Qr-v7b"/>
+                            <constraint firstItem="Zpk-5f-tSQ" firstAttribute="top" secondItem="wh7-0G-uf5" secondAttribute="bottom" constant="398" id="Hgl-LJ-KhB"/>
                             <constraint firstAttribute="trailing" secondItem="7ZW-eR-nls" secondAttribute="trailing" id="NEH-n6-UId"/>
                             <constraint firstItem="Y1Y-3K-38t" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Rje-dN-DPD"/>
+                            <constraint firstItem="wh7-0G-uf5" firstAttribute="top" secondItem="Zpk-5f-tSQ" secondAttribute="top" id="Y5H-Mv-1BU"/>
+                            <constraint firstItem="wh7-0G-uf5" firstAttribute="width" secondItem="Lgc-8D-9lX" secondAttribute="width" id="ZLu-qb-tqB"/>
+                            <constraint firstItem="wh7-0G-uf5" firstAttribute="leading" secondItem="Lgc-8D-9lX" secondAttribute="leadingMargin" constant="-16" id="aGc-ND-UCv"/>
+                            <constraint firstItem="Zpk-5f-tSQ" firstAttribute="top" secondItem="wh7-0G-uf5" secondAttribute="bottom" constant="398" id="f7Z-Sp-suR"/>
+                            <constraint firstItem="wh7-0G-uf5" firstAttribute="top" secondItem="Y1Y-3K-38t" secondAttribute="top" constant="46" id="fNf-J6-dwV"/>
                             <constraint firstItem="Y1Y-3K-38t" firstAttribute="leading" secondItem="Zpk-5f-tSQ" secondAttribute="leading" id="hoh-d6-ZcB"/>
                             <constraint firstAttribute="centerX" secondItem="Y1Y-3K-38t" secondAttribute="centerX" id="lb5-7L-CbN"/>
+                            <constraint firstItem="Zpk-5f-tSQ" firstAttribute="top" secondItem="wh7-0G-uf5" secondAttribute="bottom" constant="398" id="qwT-4P-BTZ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Zpk-5f-tSQ" secondAttribute="bottom" id="rvV-Fx-zme"/>
                             <constraint firstAttribute="centerX" secondItem="Zpk-5f-tSQ" secondAttribute="centerX" id="vKH-jJ-fCU"/>
                             <constraint firstItem="7ZW-eR-nls" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="wv6-X0-gaa"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Y5H-Mv-1BU"/>
+                                <exclude reference="Hgl-LJ-KhB"/>
+                                <exclude reference="f7Z-Sp-suR"/>
+                                <exclude reference="qwT-4P-BTZ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="colorButton" destination="Y5P-Ly-a0v" id="D8T-PM-H19"/>
                         <outlet property="commitButton" destination="DKa-A8-1f8" id="To2-gU-vO5"/>
                         <outlet property="currentColorView" destination="3OK-vz-WXr" id="J6s-pT-r2J"/>
                         <outlet property="decommitButton" destination="MFd-9m-bHn" id="rc4-OH-3AC"/>
-                        <outlet property="imagePainter" destination="7ZW-eR-nls" id="IaX-RO-Kw1"/>
+                        <outlet property="stillPainter" destination="7ZW-eR-nls" id="HYS-Ne-ObC"/>
                         <outlet property="undoButton" destination="sea-Rn-Q1t" id="ep9-3y-O6A"/>
+                        <outlet property="zoomMenu" destination="wh7-0G-uf5" id="RLO-q9-pTj"/>
+                        <outlet property="zoomOutButton" destination="eaK-zs-tDk" id="ibu-AF-s6a"/>
+                        <outlet property="zoomStartStopPaintingButton" destination="5pz-bV-X2O" id="D0P-Vq-mRV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -212,35 +247,74 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwS-UX-bH4" userLabel="Still View" customClass="CBImagePainter">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMf-nS-t4T">
-                                <rect key="frame" x="36" y="550" width="123" height="30"/>
-                                <state key="normal" title="Clear Paint Points">
+                                <rect key="frame" x="36" y="550" width="37" height="30"/>
+                                <state key="normal" title="Clear">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="clearPointsClicked:" destination="e6a-78-6ux" eventType="touchUpInside" id="8Bh-9L-kCY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viz-lj-cDy">
-                                <rect key="frame" x="447" y="550" width="116" height="30"/>
-                                <state key="normal" title="Stop Augmented">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oq7-dl-x2E">
+                                <rect key="frame" x="273" y="550" width="55" height="30"/>
+                                <state key="normal" title="Capture">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="stopAugmentedReality:" destination="e6a-78-6ux" eventType="touchUpInside" id="oRJ-5j-vYk"/>
+                                    <action selector="captureClicked:" destination="e6a-78-6ux" eventType="touchUpInside" id="lgL-Ob-mJr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viz-lj-cDy">
+                                <rect key="frame" x="530" y="550" width="33" height="30"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startStopClicked:" destination="e6a-78-6ux" eventType="touchUpInside" id="rYc-CF-4jS"/>
+                                </connections>
+                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ml4-2M-s5S" userLabel="Zoom Menu">
+                                <rect key="frame" x="0.0" y="67" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Stop Scrolling" id="s8o-xN-xFL">
+                                        <connections>
+                                            <action selector="startStopScrollingClicked:" destination="e6a-78-6ux" id="yRL-5N-kst"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="g44-5f-fni"/>
+                                    <barButtonItem title="Zoom Out" id="VSO-FS-NZ6">
+                                        <connections>
+                                            <action selector="zoomOutButtonClicked:" destination="e6a-78-6ux" id="o4d-lE-Whm"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hAh-5F-12n"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="viz-lj-cDy" secondAttribute="trailing" constant="21" id="1Fc-H1-wiv"/>
+                            <constraint firstItem="Ml4-2M-s5S" firstAttribute="width" secondItem="79j-jE-OVE" secondAttribute="width" id="3Ke-05-9Kh"/>
                             <constraint firstItem="Cjr-RR-OdQ" firstAttribute="top" secondItem="79j-jE-OVE" secondAttribute="top" id="7BP-wY-Fg9"/>
                             <constraint firstItem="iMf-nS-t4T" firstAttribute="leading" secondItem="79j-jE-OVE" secondAttribute="leadingMargin" constant="20" id="BKp-Kl-uDi"/>
                             <constraint firstItem="cxz-eq-uhN" firstAttribute="top" secondItem="viz-lj-cDy" secondAttribute="bottom" constant="20" id="GKJ-Gw-Wb8"/>
                             <constraint firstItem="Cjr-RR-OdQ" firstAttribute="height" secondItem="79j-jE-OVE" secondAttribute="height" id="Ofw-Fy-S2e"/>
+                            <constraint firstItem="Cjr-RR-OdQ" firstAttribute="width" secondItem="rwS-UX-bH4" secondAttribute="width" id="QWe-Ox-bh3"/>
                             <constraint firstItem="Cjr-RR-OdQ" firstAttribute="bottom" secondItem="cxz-eq-uhN" secondAttribute="top" id="S6v-kL-eKV"/>
+                            <constraint firstItem="Ml4-2M-s5S" firstAttribute="leading" secondItem="79j-jE-OVE" secondAttribute="leadingMargin" constant="-16" id="SlF-pK-D4g"/>
+                            <constraint firstItem="Cjr-RR-OdQ" firstAttribute="height" secondItem="rwS-UX-bH4" secondAttribute="height" id="Sxe-MD-U3Z"/>
                             <constraint firstItem="cxz-eq-uhN" firstAttribute="top" secondItem="iMf-nS-t4T" secondAttribute="bottom" constant="20" id="WJ5-Rn-aLU"/>
+                            <constraint firstItem="Cjr-RR-OdQ" firstAttribute="top" secondItem="rwS-UX-bH4" secondAttribute="top" id="ZvG-GZ-Ujj"/>
+                            <constraint firstAttribute="centerX" secondItem="Oq7-dl-x2E" secondAttribute="centerX" constant="-0.5" id="aIN-1O-q4W"/>
+                            <constraint firstItem="Ml4-2M-s5S" firstAttribute="top" secondItem="27o-bO-qQJ" secondAttribute="bottom" constant="3" id="g1P-7V-xfS"/>
                             <constraint firstAttribute="trailing" secondItem="Cjr-RR-OdQ" secondAttribute="trailing" id="nse-Ro-VPO"/>
+                            <constraint firstItem="cxz-eq-uhN" firstAttribute="top" secondItem="Oq7-dl-x2E" secondAttribute="bottom" constant="20" id="uYx-wW-ZKf"/>
+                            <constraint firstItem="Cjr-RR-OdQ" firstAttribute="leading" secondItem="rwS-UX-bH4" secondAttribute="leading" id="vUT-n5-6fw"/>
                             <constraint firstItem="Cjr-RR-OdQ" firstAttribute="leading" secondItem="79j-jE-OVE" secondAttribute="leading" id="xSs-Oh-npK"/>
                             <constraint firstItem="Cjr-RR-OdQ" firstAttribute="width" secondItem="79j-jE-OVE" secondAttribute="width" id="xXu-2q-yQy"/>
                         </constraints>
@@ -253,11 +327,16 @@
                     <connections>
                         <outlet property="augmentedView" destination="Cjr-RR-OdQ" id="85k-CC-hfu"/>
                         <outlet property="startStopButton" destination="viz-lj-cDy" id="VBp-d9-a4b"/>
+                        <outlet property="stillPainter" destination="rwS-UX-bH4" id="a1r-2O-FKd"/>
+                        <outlet property="zoomMenu" destination="Ml4-2M-s5S" id="pZm-7d-RXj"/>
+                        <outlet property="zoomOutButton" destination="VSO-FS-NZ6" id="RR0-zc-HUG"/>
+                        <outlet property="zoomStartStopPaintingButton" destination="s8o-xN-xFL" id="uOd-MQ-813"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="StillViewSegue" id="Mj0-qS-ca4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xJo-Fv-1wp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1764" y="298"/>
+            <point key="canvasLocation" x="1764" y="398"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uZ0-eX-5ks">
@@ -278,4 +357,7 @@
             <point key="canvasLocation" x="-214" y="-133"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Mj0-qS-ca4"/>
+    </inferredMetricsTieBreakers>
 </document>

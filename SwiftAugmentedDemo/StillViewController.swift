@@ -10,7 +10,7 @@ import UIKit
 
 class StillViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet var imagePainter: CBImagePainter!
+    @IBOutlet var stillPainter: CBImagePainter!
     
     @IBOutlet weak var decommitButton: UIBarButtonItem!
     @IBOutlet weak var commitButton: UIBarButtonItem!
@@ -18,9 +18,15 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var currentColorView: UIView!
     @IBOutlet weak var undoButton: UIBarButtonItem!
     
+    @IBOutlet weak var zoomMenu: UIToolbar!
+    @IBOutlet weak var zoomStartStopPaintingButton: UIBarButtonItem!
+    @IBOutlet weak var zoomOutButton: UIBarButtonItem!
+    
     var hasImage = false
     var savePath: String!
     var projectID: String!
+    
+    var imageToLoad: CBImagePainterImage?
     
     let picker = UIImagePickerController()
     
@@ -45,16 +51,16 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
         projectID = userDefaults.stringForKey("projectID")
         
         //when the undo history has changed, check to see if we can undo
-        imagePainter.historyChangedBlock = ({[weak self] in
+        stillPainter.historyChangedBlock = ({[weak self] in
             if let strongSelf = self {
-                strongSelf.undoButton.enabled = strongSelf.imagePainter.canStepBackward
+                strongSelf.undoButton.enabled = strongSelf.stillPainter.canStepBackward
             }
         })
         
-        imagePainter.contentMode = UIViewContentMode.ScaleAspectFit
+        stillPainter.contentMode = UIViewContentMode.ScaleAspectFit
         
         //started a click of a tool
-        imagePainter.startedToolBlock = ({[weak self] (toolMode: ToolMode) in
+        stillPainter.startedToolBlock = ({[weak self] (toolMode: ToolMode) in
             if let strongSelf = self {
                 if (toolMode.value == ToolModeRectangle.value) {
                     strongSelf.decommitButton.enabled = true
@@ -66,30 +72,59 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
             }
         })
         
-        //set the current color view in our interface to the paint color that imagePainter defaults to
-        currentColorView.backgroundColor = imagePainter.paintColor
+        self.zoomMenu.hidden = true
+        setZoomMenuTexts()
+        
+        stillPainter.zoomingCompletedBlock = ({[weak self] in
+            if let strongSelf = self {
+                strongSelf.zoomMenu.hidden = (strongSelf.stillPainter.zoomScale == 1.0)
+                strongSelf.setZoomMenuTexts()
+            }
+        })
+
+        
+        //set the current color view in our interface to the paint color that stillPainter defaults to
+        currentColorView.backgroundColor = stillPainter.paintColor
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
         
         //load an image if none yet
+        if (nil != imageToLoad) {
+            self.stillPainter.setStillImage(imageToLoad)
+            hasImage = true;
+            imageToLoad = nil;
+        }
+        
         if (!hasImage)  {
             getImage()
         }
+        
+        self.undoButton.enabled = self.stillPainter.canStepBackward
     }
     
     //UI button click events
     @IBAction func decommitClicked(sender: AnyObject) {
-        self.imagePainter.decommitChanges();
+        self.stillPainter.decommitChanges();
     }
     
     @IBAction func commitClicked(sender: AnyObject) {
-        self.imagePainter.commitChanges();
+        self.stillPainter.commitChanges();
     }
     
     @IBAction func changeColorClicked(sender: AnyObject) {
         changeColor( UIColor(red: 0.9, green: 0.5, blue: 0.3, alpha: 1.0))
+    }
+    
+    @IBAction func startStopScrollingClicked(sender: AnyObject) {
+        self.stillPainter.touchPaintEnabled = !self.stillPainter.touchPaintEnabled
+        
+        setZoomMenuTexts()
+    }
+    
+    @IBAction func zoomOutButtonClicked(sender: AnyObject) {
+        self.stillPainter.zoomOut()
     }
 
     //iPhone camera and library delegate methods
@@ -140,9 +175,9 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     //load an image into painter
     func loadImage(image: UIImage!, hasMasking: Bool) {
-        self.imagePainter.loadImage(image, hasAlphaMasking: hasMasking)
+        self.stillPainter.loadImage(image, hasAlphaMasking: hasMasking)
         hasImage = true
-        undoButton.enabled = false
+        undoButton.enabled = self.stillPainter.canStepBackward
     }
     
     //Upon click, create a menu to choose the current tool
@@ -151,16 +186,16 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
         
         alert.addAction(UIAlertAction(title: "Erase at Point", style: UIAlertActionStyle.Default, handler: { action in
-            self.imagePainter.toolMode = ToolModeEraser
+            self.stillPainter.toolMode = ToolModeEraser
         }));
         alert.addAction(UIAlertAction(title: "Rectangle", style: UIAlertActionStyle.Default, handler: { action in
-            self.imagePainter.toolMode = ToolModeRectangle
+            self.stillPainter.toolMode = ToolModeRectangle
         }));
         alert.addAction(UIAlertAction(title: "Fill Only", style: UIAlertActionStyle.Default, handler: { action in
-            self.imagePainter.toolMode = ToolModeFill
+            self.stillPainter.toolMode = ToolModeFill
         }));
         alert.addAction(UIAlertAction(title: "Paintbrush (Default)", style: UIAlertActionStyle.Default, handler: { action in
-            self.imagePainter.toolMode = ToolModePaintbrush
+            self.stillPainter.toolMode = ToolModePaintbrush
         }));
         
         self.presentViewController(alert, animated: true, completion: nil)
@@ -168,13 +203,13 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     //undo button clicked
     @IBAction func undoClicked(sender: AnyObject) {
-        self.imagePainter.stepBackward()
-        self.undoButton.enabled = self.imagePainter.canStepBackward
+        self.stillPainter.stepBackward()
+        self.undoButton.enabled = self.stillPainter.canStepBackward
     }
     
     //share clicked
     @IBAction func shareClicked(sender: AnyObject) {
-        let imageToSave = self.imagePainter.previewImage
+        let imageToSave = self.stillPainter.previewImage
         UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil)
         
         var alert = UIAlertController(title: "Image Saved", message: "Image was saved to camera roll", preferredStyle: UIAlertControllerStyle.Alert)
@@ -185,13 +220,13 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     //change the CBImagePainter image and also the current displayed color swatch
     func changeColor(color:UIColor) {
-        imagePainter.setPaintColor(color, updateImage: true)
+        stillPainter.setPaintColor(color, updateImage: true)
         currentColorView.backgroundColor = color
     }
     
     //save project clicked
     @IBAction func saveClicked(sender: AnyObject) {
-        projectID = imagePainter.saveProjectToDirectory(savePath, saveState: true)
+        projectID = stillPainter.saveProjectToDirectory(savePath, saveState: true)
         
         let userDefaults = NSUserDefaults.standardUserDefaults()
         userDefaults.setValue(projectID, forKey: "projectID")
@@ -204,7 +239,16 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     //load project clicked
     @IBAction func loadClicked(sender: AnyObject) {
-        imagePainter.loadProject(projectID, fromDirectory: savePath)
+        stillPainter.loadProject(projectID, fromDirectory: savePath)
+    }
+    
+    func setZoomMenuTexts() {
+        if (self.stillPainter.touchPaintEnabled) {
+            self.zoomStartStopPaintingButton.title = "Enable Scrolling"
+        }
+        else {
+            self.zoomStartStopPaintingButton.title = "Switch to Painting"
+        }
     }
 }
 

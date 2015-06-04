@@ -24,7 +24,7 @@ class ColorPickerViewController: UIViewController, UIImagePickerControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //set up camera and library
         picker.delegate = self
         picker.allowsEditing = false
@@ -57,7 +57,7 @@ class ColorPickerViewController: UIViewController, UIImagePickerControllerDelega
                         width: strongSelf.currentColorView.frame.width, height: strongSelf.currentColorView.frame.height)
                 }
             }
-        })
+            })
     }
     
     //iPhone camera and library delegate methods
@@ -78,7 +78,7 @@ class ColorPickerViewController: UIViewController, UIImagePickerControllerDelega
     @IBAction func getImage() {
         var alert = UIAlertController(title: "Image Source", message: "Pick an initial image source", preferredStyle: UIAlertControllerStyle.Alert);
         
-                
+        
         if (UIImagePickerController.isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Rear)) {
             alert.addAction(UIAlertAction(title: "Device Camera", style: UIAlertActionStyle.Default, handler: { action in
                 self.picker.sourceType = .Camera
@@ -93,7 +93,7 @@ class ColorPickerViewController: UIViewController, UIImagePickerControllerDelega
         
         self.presentViewController(alert, animated: true, completion: nil)
     }
-
+    
     //load an image into painter
     func loadImage(image: UIImage!) {
         colorFinder.image = image
