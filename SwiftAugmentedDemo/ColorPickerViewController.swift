@@ -16,10 +16,11 @@ class ColorPickerViewController: UIViewController, UIImagePickerControllerDelega
     let picker = UIImagePickerController()
     
     let currentColorView = UIView()
+    var asked = false;
     
     deinit {
         // perform the deinitialization
-        println("deinit ColorPickerViewController")
+        NSLog("deinit ColorPickerViewController")
     }
     
     override func viewDidLoad() {
@@ -39,8 +40,12 @@ class ColorPickerViewController: UIViewController, UIImagePickerControllerDelega
         super.viewWillAppear(animated);
         
         //load an image if none yet
-        if (colorFinder.image == nil)  {
+        if (!asked)  {
+            asked = true
             getImage()
+        }
+        else if (asked && colorFinder.image == nil) {
+            self.navigationController!.popViewControllerAnimated(true)
         }
         
         colorFinder.colorTouchedAtPoint = ({
@@ -48,12 +53,12 @@ class ColorPickerViewController: UIViewController, UIImagePickerControllerDelega
             (touchType: TouchStep, point:CGPoint, color:UIColor!) in
             
             if let strongSelf = self {
-                if (touchType.value == TouchStepEnded.value) {
+                if (touchType.rawValue == TouchStepEnded.rawValue) {
                     strongSelf.currentColorView.hidden = true
                 } else {
                     strongSelf.currentColorView.hidden = false
                     strongSelf.currentColorView.backgroundColor = color
-                    strongSelf.currentColorView.frame = CGRect(x: point.x, y: point.y,
+                    strongSelf.currentColorView.frame = CGRect(x: point.x + 50, y: point.y - 50,
                         width: strongSelf.currentColorView.frame.width, height: strongSelf.currentColorView.frame.height)
                 }
             }
@@ -61,7 +66,7 @@ class ColorPickerViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     //iPhone camera and library delegate methods
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
         
         loadImage(chosenImage)
@@ -71,12 +76,11 @@ class ColorPickerViewController: UIViewController, UIImagePickerControllerDelega
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
-        getImage()
     }
     
     //get image clicked or called internally
     @IBAction func getImage() {
-        var alert = UIAlertController(title: "Image Source", message: "Pick an initial image source", preferredStyle: UIAlertControllerStyle.Alert);
+        let alert = UIAlertController(title: "Image Source", message: "Pick an initial image source", preferredStyle: UIAlertControllerStyle.Alert);
         
         
         if (UIImagePickerController.isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Rear)) {
@@ -89,6 +93,10 @@ class ColorPickerViewController: UIViewController, UIImagePickerControllerDelega
         alert.addAction(UIAlertAction(title: "Library", style: UIAlertActionStyle.Default, handler: { action in
             self.picker.sourceType = .PhotoLibrary
             self.presentViewController(self.picker, animated: true, completion: nil)
+        }));
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: { action in
+            self.navigationController!.popViewControllerAnimated(true)
         }));
         
         self.presentViewController(alert, animated: true, completion: nil)

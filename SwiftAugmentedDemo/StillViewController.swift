@@ -25,6 +25,10 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
     var hasImage = false
     var savePath: String!
     var projectID: String!
+    var colorA = UIColor(red: 0.9, green: 0.5, blue: 0.3, alpha: 1.0) //Cambrian blue
+    //var colorB = UIColor(red: 0.9, green: 0.5, blue: 0.3, alpha: 1.0) //HD Orange
+    //var colorB = UIColor(red: 0.6941176471, green: 0.6431372549, blue: 0.568627451, alpha: 1.0) //Tony Taupe
+    var colorB = UIColor(red: 1.0, green:0.95, blue: 0.87, alpha: 1.0)
     
     var imageToLoad: CBImagePainterImage?
     
@@ -32,7 +36,7 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     deinit {
         // perform the deinitialization
-        println("deinit StillViewController")
+        NSLog("deinit StillViewController")
     }
 
     override func viewDidLoad() {
@@ -43,7 +47,7 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
         picker.allowsEditing = false
         
         //internal paths
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! NSString
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
         savePath = documentsPath.stringByAppendingPathComponent("projects")
         
         //get project ID, if we have saved once before, otherwise null
@@ -57,12 +61,14 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
             }
         })
         
+        colorA = stillPainter.paintColor
         stillPainter.contentMode = UIViewContentMode.ScaleAspectFit
+        currentColorView.backgroundColor = stillPainter.paintColor
         
         //started a click of a tool
         stillPainter.startedToolBlock = ({[weak self] (toolMode: ToolMode) in
             if let strongSelf = self {
-                if (toolMode.value == ToolModeRectangle.value) {
+                if (toolMode.rawValue == ToolModeRectangle.rawValue) {
                     strongSelf.decommitButton.enabled = true
                     strongSelf.commitButton.enabled = true
                 } else {
@@ -81,10 +87,9 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
                 strongSelf.setZoomMenuTexts()
             }
         })
-
         
         //set the current color view in our interface to the paint color that stillPainter defaults to
-        currentColorView.backgroundColor = stillPainter.paintColor
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -113,8 +118,14 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
         self.stillPainter.commitChanges();
     }
     
+    var isColorA = true
     @IBAction func changeColorClicked(sender: AnyObject) {
-        changeColor( UIColor(red: 0.9, green: 0.5, blue: 0.3, alpha: 1.0))
+        if (isColorA) {
+            changeColor(colorB)
+        } else {
+            changeColor(colorA)
+        }
+        isColorA = !isColorA
     }
     
     @IBAction func startStopScrollingClicked(sender: AnyObject) {
@@ -128,7 +139,7 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
 
     //iPhone camera and library delegate methods
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
         loadImage(chosenImage, hasMasking: false)
         dismissViewControllerAnimated(true, completion: nil) //5
@@ -141,7 +152,7 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     //get image clicked or called internally
     @IBAction func getImage() {
-        var alert = UIAlertController(title: "Image Source", message: "Pick an initial image source", preferredStyle: UIAlertControllerStyle.Alert);
+        let alert = UIAlertController(title: "Image Source", message: "Pick an initial image source", preferredStyle: UIAlertControllerStyle.Alert);
         
         
         if ((projectID) != nil) {
@@ -167,7 +178,9 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
         }));
         
         alert.addAction(UIAlertAction(title: "Basic Unmasked Image", style: UIAlertActionStyle.Default, handler: { action in
-            self.loadImage(UIImage(named:"shutterstock_13368892.jpg"), hasMasking: false)
+            //self.loadImage(UIImage(named:"shutterstock_13368892.jpg"), hasMasking: false)
+            self.loadImage(UIImage(named:"ourhouse.jpg"), hasMasking: false)
+            //self.loadImage(UIImage(named:"traditional-kitchen.jpg"), hasMasking: false)
         }));
         
         self.presentViewController(alert, animated: true, completion: nil)
@@ -182,7 +195,7 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     //Upon click, create a menu to choose the current tool
     @IBAction func changeTool() {
-        var alert = UIAlertController(title: "Change Tool", message: "Change Visualizer Tool", preferredStyle: UIAlertControllerStyle.Alert);
+        let alert = UIAlertController(title: "Change Tool", message: "Change Visualizer Tool", preferredStyle: UIAlertControllerStyle.Alert);
         
         
         alert.addAction(UIAlertAction(title: "Erase at Point", style: UIAlertActionStyle.Default, handler: { action in
@@ -209,13 +222,15 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     //share clicked
     @IBAction func shareClicked(sender: AnyObject) {
-        let imageToSave = self.stillPainter.previewImage
-        UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil)
-        
-        var alert = UIAlertController(title: "Image Saved", message: "Image was saved to camera roll", preferredStyle: UIAlertControllerStyle.Alert)
-    
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil));
-        self.presentViewController(alert, animated: true, completion: nil)
+        if let imageToSave = self.stillPainter.getRenderedImage()
+        {
+            UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil)
+            
+            let alert = UIAlertController(title: "Image Saved", message: "Image was saved to camera roll", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil));
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
     
     //change the CBImagePainter image and also the current displayed color swatch
@@ -232,7 +247,7 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
         userDefaults.setValue(projectID, forKey: "projectID")
         userDefaults.synchronize()
         
-        var alert = UIAlertController(title: "Project Saved", message: "Project was saved with projectID: " + projectID, preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Project Saved", message: "Project was saved with projectID: " + projectID, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:nil));
         self.presentViewController(alert, animated: true, completion: nil)
     }
