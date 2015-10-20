@@ -10,6 +10,8 @@
 	<string>SwiftAugmentedDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>5B5ECCE5ACB47D53B6E856920317F72CF9315641</key>
+		<string>bitbucket.org:joelteply/cambrian-ios.git</string>
 		<key>7451E2DF25F4377F02E80DD9B5448AC357723BC1</key>
 		<string>ssh://bitbucket.org/cambrian/swiftaugmenteddemo.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>SwiftAugmentedDemo.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>5B5ECCE5ACB47D53B6E856920317F72CF9315641</key>
+		<string>../../../../cambrian-ios</string>
 		<key>7451E2DF25F4377F02E80DD9B5448AC357723BC1</key>
 		<string>../..</string>
 	</dict>
@@ -28,6 +32,14 @@
 	<string>7451E2DF25F4377F02E80DD9B5448AC357723BC1</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5B5ECCE5ACB47D53B6E856920317F72CF9315641</string>
+			<key>IDESourceControlWCCName</key>
+			<string>cambrian-ios</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

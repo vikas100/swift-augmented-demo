@@ -7,17 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E7C5C0931B1C215000E98293 /* libHomeAugmentation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E73C0BE21B00FFF100AFD166 /* libHomeAugmentation.a */; };
+		E7464E3B1B72F8F10091A5A8 /* ourhouse.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E7464E3A1B72F8F10091A5A8 /* ourhouse.jpg */; };
+		E7464E3D1B72FCDC0091A5A8 /* ourhouse1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E7464E3C1B72FCDC0091A5A8 /* ourhouse1.jpg */; };
+		E7464E3F1B730DC80091A5A8 /* traditional-kitchen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E7464E3E1B730DC80091A5A8 /* traditional-kitchen.jpg */; };
+		E7519EC01BA41C5100E97D0C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7519EBF1BA41C5100E97D0C /* GLKit.framework */; };
+		E77018891BD0AF6A00D319B2 /* HomeAugmentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77018871BD0AF6A00D319B2 /* HomeAugmentation.framework */; };
+		E770188A1BD0AF6A00D319B2 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77018881BD0AF6A00D319B2 /* opencv2.framework */; };
+		E770188C1BD0AF9800D319B2 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E770188B1BD0AF9800D319B2 /* libc++.tbd */; };
 		E7C5C0941B1C220300E98293 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE561A1AC8EF160084C8BB /* ImageIO.framework */; };
 		E7D623571AEAAE9B003451B5 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D623561AEAAE9B003451B5 /* ColorPickerViewController.swift */; };
+		E7E627391B6FEC6B0035204A /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E627381B6FEC6B0035204A /* opencv2.framework */; };
 		E7FE55BB1AC5FA740084C8BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE55BA1AC5FA740084C8BB /* AppDelegate.swift */; };
 		E7FE55BD1AC5FA740084C8BB /* StillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE55BC1AC5FA740084C8BB /* StillViewController.swift */; };
 		E7FE55C01AC5FA740084C8BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7FE55BE1AC5FA740084C8BB /* Main.storyboard */; };
 		E7FE55C21AC5FA740084C8BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7FE55C11AC5FA740084C8BB /* Images.xcassets */; };
 		E7FE55C51AC5FA740084C8BB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FE55C31AC5FA740084C8BB /* LaunchScreen.xib */; };
-		E7FE55F11AC604560084C8BB /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE55EF1AC604560084C8BB /* opencv2.framework */; };
 		E7FE55F31AC60AAD0084C8BB /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE55F21AC60AAD0084C8BB /* Accelerate.framework */; };
-		E7FE55F51AC60AD30084C8BB /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE55F41AC60AD30084C8BB /* libc++.dylib */; };
 		E7FE55F91AC60FEB0084C8BB /* living-room-1-masked.png in Resources */ = {isa = PBXBuildFile; fileRef = E7FE55F71AC60FEB0084C8BB /* living-room-1-masked.png */; };
 		E7FE55FA1AC60FEB0084C8BB /* shutterstock_13368892.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E7FE55F81AC60FEB0084C8BB /* shutterstock_13368892.jpg */; };
 		E7FE55FC1AC8E9950084C8BB /* AugmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE55FB1AC8E9950084C8BB /* AugmentedViewController.swift */; };
@@ -25,19 +30,16 @@
 		E7FE56111AC8ED2C0084C8BB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE56101AC8ED2C0084C8BB /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		E73C0BE11B00FFF100AFD166 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E73C0BCD1B0066E900AFD166 /* HomeAugmentation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E79EAD1E19ED87A7004A3ED5;
-			remoteInfo = HomeAugmentation;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		E73C0BCD1B0066E900AFD166 /* HomeAugmentation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HomeAugmentation.xcodeproj; path = "../../../../cambrian-ios/HomeAugmentationFramework/HomeAugmentation.xcodeproj"; sourceTree = "<group>"; };
+		E7464E3A1B72F8F10091A5A8 /* ourhouse.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ourhouse.jpg; sourceTree = "<group>"; };
+		E7464E3C1B72FCDC0091A5A8 /* ourhouse1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ourhouse1.jpg; sourceTree = "<group>"; };
+		E7464E3E1B730DC80091A5A8 /* traditional-kitchen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "traditional-kitchen.jpg"; sourceTree = "<group>"; };
+		E7519EBF1BA41C5100E97D0C /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		E77018871BD0AF6A00D319B2 /* HomeAugmentation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeAugmentation.framework; path = SwiftAugmentedDemo/Frameworks/HomeAugmentation.framework; sourceTree = "<group>"; };
+		E77018881BD0AF6A00D319B2 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = SwiftAugmentedDemo/Frameworks/opencv2.framework; sourceTree = "<group>"; };
+		E770188B1BD0AF9800D319B2 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		E7D623561AEAAE9B003451B5 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
+		E7E627381B6FEC6B0035204A /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = "../../cambrian-ios/ThirdParty/opencv2.framework"; sourceTree = "<group>"; };
 		E7FE55B51AC5FA740084C8BB /* SwiftAugmentedDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftAugmentedDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7FE55B91AC5FA740084C8BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7FE55BA1AC5FA740084C8BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,9 +48,7 @@
 		E7FE55C11AC5FA740084C8BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E7FE55C41AC5FA740084C8BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E7FE55E71AC602320084C8BB /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		E7FE55EF1AC604560084C8BB /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		E7FE55F21AC60AAD0084C8BB /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		E7FE55F41AC60AD30084C8BB /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		E7FE55F71AC60FEB0084C8BB /* living-room-1-masked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "living-room-1-masked.png"; sourceTree = "<group>"; };
 		E7FE55F81AC60FEB0084C8BB /* shutterstock_13368892.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shutterstock_13368892.jpg; sourceTree = "<group>"; };
 		E7FE55FB1AC8E9950084C8BB /* AugmentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AugmentedViewController.swift; sourceTree = "<group>"; };
@@ -64,30 +64,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E770188C1BD0AF9800D319B2 /* libc++.tbd in Frameworks */,
+				E77018891BD0AF6A00D319B2 /* HomeAugmentation.framework in Frameworks */,
+				E770188A1BD0AF6A00D319B2 /* opencv2.framework in Frameworks */,
+				E7519EC01BA41C5100E97D0C /* GLKit.framework in Frameworks */,
+				E7E627391B6FEC6B0035204A /* opencv2.framework in Frameworks */,
 				E7C5C0941B1C220300E98293 /* ImageIO.framework in Frameworks */,
-				E7C5C0931B1C215000E98293 /* libHomeAugmentation.a in Frameworks */,
 				E7FE56111AC8ED2C0084C8BB /* AVFoundation.framework in Frameworks */,
 				E7FE560F1AC8ED240084C8BB /* CoreMotion.framework in Frameworks */,
-				E7FE55F51AC60AD30084C8BB /* libc++.dylib in Frameworks */,
 				E7FE55F31AC60AAD0084C8BB /* Accelerate.framework in Frameworks */,
-				E7FE55F11AC604560084C8BB /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E73C0BDD1B00FFF100AFD166 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E73C0BE21B00FFF100AFD166 /* libHomeAugmentation.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		E7FE55AC1AC5FA740084C8BB = {
 			isa = PBXGroup;
 			children = (
+				E770188B1BD0AF9800D319B2 /* libc++.tbd */,
+				E77018871BD0AF6A00D319B2 /* HomeAugmentation.framework */,
+				E77018881BD0AF6A00D319B2 /* opencv2.framework */,
+				E7519EBF1BA41C5100E97D0C /* GLKit.framework */,
+				E7E627381B6FEC6B0035204A /* opencv2.framework */,
 				E7FE55B71AC5FA740084C8BB /* SwiftAugmentedDemo */,
 				E7FE55B61AC5FA740084C8BB /* Products */,
 			);
@@ -121,6 +120,9 @@
 		E7FE55B81AC5FA740084C8BB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E7464E3E1B730DC80091A5A8 /* traditional-kitchen.jpg */,
+				E7464E3A1B72F8F10091A5A8 /* ourhouse.jpg */,
+				E7464E3C1B72FCDC0091A5A8 /* ourhouse1.jpg */,
 				E7FE55ED1AC604560084C8BB /* Frameworks */,
 				E7FE55B91AC5FA740084C8BB /* Info.plist */,
 			);
@@ -130,15 +132,12 @@
 		E7FE55ED1AC604560084C8BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E73C0BCD1B0066E900AFD166 /* HomeAugmentation.xcodeproj */,
 				E7FE561A1AC8EF160084C8BB /* ImageIO.framework */,
 				E7FE56181AC8EEE50084C8BB /* CoreGraphics.framework */,
 				E7FE56161AC8EEA70084C8BB /* CoreImage.framework */,
 				E7FE56101AC8ED2C0084C8BB /* AVFoundation.framework */,
 				E7FE560E1AC8ED240084C8BB /* CoreMotion.framework */,
-				E7FE55F41AC60AD30084C8BB /* libc++.dylib */,
 				E7FE55F21AC60AAD0084C8BB /* Accelerate.framework */,
-				E7FE55EF1AC604560084C8BB /* opencv2.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -178,12 +177,14 @@
 		E7FE55AD1AC5FA740084C8BB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Joel Teply";
 				TargetAttributes = {
 					E7FE55B41AC5FA740084C8BB = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 487F34SCQ8;
 					};
 				};
 			};
@@ -198,28 +199,12 @@
 			mainGroup = E7FE55AC1AC5FA740084C8BB;
 			productRefGroup = E7FE55B61AC5FA740084C8BB /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = E73C0BDD1B00FFF100AFD166 /* Products */;
-					ProjectRef = E73C0BCD1B0066E900AFD166 /* HomeAugmentation.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				E7FE55B41AC5FA740084C8BB /* SwiftAugmentedDemo */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		E73C0BE21B00FFF100AFD166 /* libHomeAugmentation.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libHomeAugmentation.a;
-			remoteRef = E73C0BE11B00FFF100AFD166 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E7FE55B31AC5FA740084C8BB /* Resources */ = {
@@ -229,6 +214,9 @@
 				E7FE55C01AC5FA740084C8BB /* Main.storyboard in Resources */,
 				E7FE55C51AC5FA740084C8BB /* LaunchScreen.xib in Resources */,
 				E7FE55FA1AC60FEB0084C8BB /* shutterstock_13368892.jpg in Resources */,
+				E7464E3B1B72F8F10091A5A8 /* ourhouse.jpg in Resources */,
+				E7464E3F1B730DC80091A5A8 /* traditional-kitchen.jpg in Resources */,
+				E7464E3D1B72FCDC0091A5A8 /* ourhouse1.jpg in Resources */,
 				E7FE55F91AC60FEB0084C8BB /* living-room-1-masked.png in Resources */,
 				E7FE55C21AC5FA740084C8BB /* Images.xcassets in Resources */,
 			);
@@ -366,13 +354,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SwiftAugmentedDemo/Frameworks",
+					"/Users/joelteply/Development/cambrian/cambrian-ios/build",
+					"/Users/joelteply/Development/cambrian/cambrian-ios/ThirdParty",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SwiftAugmentedDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -381,6 +374,7 @@
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/AppsAndDemos-ctsmtlowayrikeeppyojodkzcrqb/Build/Products/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftAugmentedDemo/Bridging-Header.h";
 			};
 			name = Debug;
@@ -390,13 +384,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SwiftAugmentedDemo/Frameworks",
+					"/Users/joelteply/Development/cambrian/cambrian-ios/build",
+					"/Users/joelteply/Development/cambrian/cambrian-ios/ThirdParty",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SwiftAugmentedDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -405,6 +404,7 @@
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/AppsAndDemos-ctsmtlowayrikeeppyojodkzcrqb/Build/Products/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftAugmentedDemo/Bridging-Header.h";
 			};
 			name = Release;
