@@ -12,11 +12,9 @@
 		E7464E3F1B730DC80091A5A8 /* traditional-kitchen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E7464E3E1B730DC80091A5A8 /* traditional-kitchen.jpg */; };
 		E7519EC01BA41C5100E97D0C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7519EBF1BA41C5100E97D0C /* GLKit.framework */; };
 		E77018891BD0AF6A00D319B2 /* HomeAugmentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77018871BD0AF6A00D319B2 /* HomeAugmentation.framework */; };
-		E770188A1BD0AF6A00D319B2 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77018881BD0AF6A00D319B2 /* opencv2.framework */; };
 		E770188C1BD0AF9800D319B2 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E770188B1BD0AF9800D319B2 /* libc++.tbd */; };
 		E7C5C0941B1C220300E98293 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE561A1AC8EF160084C8BB /* ImageIO.framework */; };
 		E7D623571AEAAE9B003451B5 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D623561AEAAE9B003451B5 /* ColorPickerViewController.swift */; };
-		E7E627391B6FEC6B0035204A /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E627381B6FEC6B0035204A /* opencv2.framework */; };
 		E7FE55BB1AC5FA740084C8BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE55BA1AC5FA740084C8BB /* AppDelegate.swift */; };
 		E7FE55BD1AC5FA740084C8BB /* StillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE55BC1AC5FA740084C8BB /* StillViewController.swift */; };
 		E7FE55C01AC5FA740084C8BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7FE55BE1AC5FA740084C8BB /* Main.storyboard */; };
@@ -36,10 +34,8 @@
 		E7464E3E1B730DC80091A5A8 /* traditional-kitchen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "traditional-kitchen.jpg"; sourceTree = "<group>"; };
 		E7519EBF1BA41C5100E97D0C /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		E77018871BD0AF6A00D319B2 /* HomeAugmentation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeAugmentation.framework; path = SwiftAugmentedDemo/Frameworks/HomeAugmentation.framework; sourceTree = "<group>"; };
-		E77018881BD0AF6A00D319B2 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = SwiftAugmentedDemo/Frameworks/opencv2.framework; sourceTree = "<group>"; };
 		E770188B1BD0AF9800D319B2 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		E7D623561AEAAE9B003451B5 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
-		E7E627381B6FEC6B0035204A /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = "../../cambrian-ios/ThirdParty/opencv2.framework"; sourceTree = "<group>"; };
 		E7FE55B51AC5FA740084C8BB /* SwiftAugmentedDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftAugmentedDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7FE55B91AC5FA740084C8BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7FE55BA1AC5FA740084C8BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,9 +62,7 @@
 			files = (
 				E770188C1BD0AF9800D319B2 /* libc++.tbd in Frameworks */,
 				E77018891BD0AF6A00D319B2 /* HomeAugmentation.framework in Frameworks */,
-				E770188A1BD0AF6A00D319B2 /* opencv2.framework in Frameworks */,
 				E7519EC01BA41C5100E97D0C /* GLKit.framework in Frameworks */,
-				E7E627391B6FEC6B0035204A /* opencv2.framework in Frameworks */,
 				E7C5C0941B1C220300E98293 /* ImageIO.framework in Frameworks */,
 				E7FE56111AC8ED2C0084C8BB /* AVFoundation.framework in Frameworks */,
 				E7FE560F1AC8ED240084C8BB /* CoreMotion.framework in Frameworks */,
@@ -84,9 +78,7 @@
 			children = (
 				E770188B1BD0AF9800D319B2 /* libc++.tbd */,
 				E77018871BD0AF6A00D319B2 /* HomeAugmentation.framework */,
-				E77018881BD0AF6A00D319B2 /* opencv2.framework */,
 				E7519EBF1BA41C5100E97D0C /* GLKit.framework */,
-				E7E627381B6FEC6B0035204A /* opencv2.framework */,
 				E7FE55B71AC5FA740084C8BB /* SwiftAugmentedDemo */,
 				E7FE55B61AC5FA740084C8BB /* Products */,
 			);
