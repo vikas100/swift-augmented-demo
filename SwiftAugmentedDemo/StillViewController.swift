@@ -241,6 +241,8 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBAction func saveClicked(sender: AnyObject) {
         projectID = stillPainter.saveProjectToDirectory(savePath, saveState: true)
         
+        print("Project saved to \(savePath)/\(projectID)")
+        
         let userDefaults = NSUserDefaults.standardUserDefaults()
         userDefaults.setValue(projectID, forKey: "projectID")
         userDefaults.synchronize()
