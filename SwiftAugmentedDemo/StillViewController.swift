@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StillViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class StillViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ChooseImageDelegate {
     
     @IBOutlet var stillPainter: CBImagePainter!
     
@@ -155,12 +155,6 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
         let alert = UIAlertController(title: "Image Source", message: "Pick an initial image source", preferredStyle: UIAlertControllerStyle.Alert);
         
         
-        if ((projectID) != nil) {
-            alert.addAction(UIAlertAction(title: "Saved Project", style: UIAlertActionStyle.Default, handler: { action in
-                self.loadClicked(self.projectID)
-            }));
-        }
-        
         if (UIImagePickerController.isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Rear)) {
             alert.addAction(UIAlertAction(title: "Device Camera", style: UIAlertActionStyle.Default, handler: { action in
                 self.picker.sourceType = .Camera
@@ -168,20 +162,24 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
             }));
         }
         
+        alert.addAction(UIAlertAction(title: "Sample Room (pre-masked)", style: UIAlertActionStyle.Default, handler: { action in
+            self.performSegueWithIdentifier("showRoomTypes", sender: self)
+        }));
+        
+        alert.addAction(UIAlertAction(title: "Basic Unmasked Image", style: UIAlertActionStyle.Default, handler: { action in
+            self.loadImage(UIImage(named:"shutterstock_13368892.jpg"), hasMasking: false)
+        }));
+        
         alert.addAction(UIAlertAction(title: "Library", style: UIAlertActionStyle.Default, handler: { action in
             self.picker.sourceType = .PhotoLibrary
             self.presentViewController(self.picker, animated: true, completion: nil)
         }));
         
-        alert.addAction(UIAlertAction(title: "Pre-masked Image", style: UIAlertActionStyle.Default, handler: { action in
-            self.loadImage(UIImage(named:"living-room-1-masked.png"), hasMasking: true)
-        }));
-        
-        alert.addAction(UIAlertAction(title: "Basic Unmasked Image", style: UIAlertActionStyle.Default, handler: { action in
-            //self.loadImage(UIImage(named:"shutterstock_13368892.jpg"), hasMasking: false)
-            self.loadImage(UIImage(named:"ourhouse.jpg"), hasMasking: false)
-            //self.loadImage(UIImage(named:"traditional-kitchen.jpg"), hasMasking: false)
-        }));
+        if ((projectID) != nil) {
+            alert.addAction(UIAlertAction(title: "Saved Project", style: UIAlertActionStyle.Default, handler: { action in
+                self.loadClicked(self.projectID)
+            }));
+        }
         
         self.presentViewController(alert, animated: true, completion: nil)
     }
@@ -264,6 +262,24 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
         else {
             self.zoomStartStopPaintingButton.title = "Switch to Painting"
         }
+    }
+    
+    @IBAction func returnFromImageChoice(segue: UIStoryboardSegue) {
+        
+        print("Called goToSideMenu: unwind action")
+        
+    }
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if let roomSelector = segue.destinationViewController as? RoomTypesViewController {
+            roomSelector.delegate = self
+        }
+    }
+    
+    func imageChosen(image : UIImage) {
+        self.loadImage(image, hasMasking: true)
     }
 }
 
