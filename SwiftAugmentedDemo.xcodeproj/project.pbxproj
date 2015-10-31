@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E745BBE61BE55360007B443F /* libHomeAugmentation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E745BBE51BE55360007B443F /* libHomeAugmentation.a */; };
 		E7464E3B1B72F8F10091A5A8 /* ourhouse.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E7464E3A1B72F8F10091A5A8 /* ourhouse.jpg */; };
 		E7464E3D1B72FCDC0091A5A8 /* ourhouse1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E7464E3C1B72FCDC0091A5A8 /* ourhouse1.jpg */; };
 		E7464E3F1B730DC80091A5A8 /* traditional-kitchen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E7464E3E1B730DC80091A5A8 /* traditional-kitchen.jpg */; };
@@ -15,7 +16,6 @@
 		E753E8AB1BDFFFF3002DA1B2 /* Rooms in Resources */ = {isa = PBXBuildFile; fileRef = E753E8AA1BDFFFF3002DA1B2 /* Rooms */; };
 		E753E8AD1BE00353002DA1B2 /* shutterstock_13368892.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E753E8AC1BE00353002DA1B2 /* shutterstock_13368892.jpg */; };
 		E753E8AF1BE005FD002DA1B2 /* ChooseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753E8AE1BE005FC002DA1B2 /* ChooseImageViewController.swift */; };
-		E77018891BD0AF6A00D319B2 /* HomeAugmentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77018871BD0AF6A00D319B2 /* HomeAugmentation.framework */; };
 		E770188C1BD0AF9800D319B2 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E770188B1BD0AF9800D319B2 /* libc++.tbd */; };
 		E7C5C0941B1C220300E98293 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE561A1AC8EF160084C8BB /* ImageIO.framework */; };
 		E7D623571AEAAE9B003451B5 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D623561AEAAE9B003451B5 /* ColorPickerViewController.swift */; };
@@ -31,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E745BBE31BE5534D007B443F /* HomeAR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeAR.framework; path = "../../cambrian-ios/HomeAugmentationFramework/build/Debug-iphoneos/HomeAR.framework"; sourceTree = "<group>"; };
+		E745BBE51BE55360007B443F /* libHomeAugmentation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libHomeAugmentation.a; path = "../../cambrian-ios/HomeAugmentationFramework/build/Debug-iphoneos/libHomeAugmentation.a"; sourceTree = "<group>"; };
 		E7464E3A1B72F8F10091A5A8 /* ourhouse.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ourhouse.jpg; sourceTree = "<group>"; };
 		E7464E3C1B72FCDC0091A5A8 /* ourhouse1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ourhouse1.jpg; sourceTree = "<group>"; };
 		E7464E3E1B730DC80091A5A8 /* traditional-kitchen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "traditional-kitchen.jpg"; sourceTree = "<group>"; };
@@ -39,7 +41,6 @@
 		E753E8AA1BDFFFF3002DA1B2 /* Rooms */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Rooms; sourceTree = "<group>"; };
 		E753E8AC1BE00353002DA1B2 /* shutterstock_13368892.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shutterstock_13368892.jpg; sourceTree = "<group>"; };
 		E753E8AE1BE005FC002DA1B2 /* ChooseImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseImageViewController.swift; sourceTree = "<group>"; };
-		E77018871BD0AF6A00D319B2 /* HomeAugmentation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeAugmentation.framework; path = SwiftAugmentedDemo/Frameworks/HomeAugmentation.framework; sourceTree = "<group>"; };
 		E770188B1BD0AF9800D319B2 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		E7D623561AEAAE9B003451B5 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		E7FE55B51AC5FA740084C8BB /* SwiftAugmentedDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftAugmentedDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,8 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E745BBE61BE55360007B443F /* libHomeAugmentation.a in Frameworks */,
 				E770188C1BD0AF9800D319B2 /* libc++.tbd in Frameworks */,
-				E77018891BD0AF6A00D319B2 /* HomeAugmentation.framework in Frameworks */,
 				E7519EC01BA41C5100E97D0C /* GLKit.framework in Frameworks */,
 				E7C5C0941B1C220300E98293 /* ImageIO.framework in Frameworks */,
 				E7FE56111AC8ED2C0084C8BB /* AVFoundation.framework in Frameworks */,
@@ -80,8 +81,9 @@
 		E7FE55AC1AC5FA740084C8BB = {
 			isa = PBXGroup;
 			children = (
+				E745BBE51BE55360007B443F /* libHomeAugmentation.a */,
+				E745BBE31BE5534D007B443F /* HomeAR.framework */,
 				E770188B1BD0AF9800D319B2 /* libc++.tbd */,
-				E77018871BD0AF6A00D319B2 /* HomeAugmentation.framework */,
 				E7519EBF1BA41C5100E97D0C /* GLKit.framework */,
 				E7FE55B71AC5FA740084C8BB /* SwiftAugmentedDemo */,
 				E7FE55B61AC5FA740084C8BB /* Products */,
