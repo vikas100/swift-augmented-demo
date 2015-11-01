@@ -17,6 +17,7 @@
 		E753E8AF1BE005FD002DA1B2 /* ChooseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753E8AE1BE005FC002DA1B2 /* ChooseImageViewController.swift */; };
 		E770188C1BD0AF9800D319B2 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E770188B1BD0AF9800D319B2 /* libc++.tbd */; };
 		E790CD0E1BE67E16004ADB68 /* HomeAR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E790CD0D1BE67E16004ADB68 /* HomeAR.framework */; };
+		E790CD101BE682FF004ADB68 /* HomeAR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E790CD0F1BE682FF004ADB68 /* HomeAR.framework */; };
 		E7C5C0941B1C220300E98293 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE561A1AC8EF160084C8BB /* ImageIO.framework */; };
 		E7D623571AEAAE9B003451B5 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D623561AEAAE9B003451B5 /* ColorPickerViewController.swift */; };
 		E7FE55BB1AC5FA740084C8BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE55BA1AC5FA740084C8BB /* AppDelegate.swift */; };
@@ -41,6 +42,7 @@
 		E753E8AE1BE005FC002DA1B2 /* ChooseImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseImageViewController.swift; sourceTree = "<group>"; };
 		E770188B1BD0AF9800D319B2 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		E790CD0D1BE67E16004ADB68 /* HomeAR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeAR.framework; path = "../../../../Library/Developer/Xcode/DerivedData/AppsAndDemos-csmljzowevpcoteszmffwyjxuwlk/Build/Products/Debug-iphoneos/HomeAR.framework"; sourceTree = "<group>"; };
+		E790CD0F1BE682FF004ADB68 /* HomeAR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HomeAR.framework; sourceTree = "<group>"; };
 		E7D623561AEAAE9B003451B5 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		E7FE55B51AC5FA740084C8BB /* SwiftAugmentedDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftAugmentedDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7FE55B91AC5FA740084C8BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E790CD101BE682FF004ADB68 /* HomeAR.framework in Frameworks */,
 				E790CD0E1BE67E16004ADB68 /* HomeAR.framework in Frameworks */,
 				E770188C1BD0AF9800D319B2 /* libc++.tbd in Frameworks */,
 				E7519EC01BA41C5100E97D0C /* GLKit.framework in Frameworks */,
@@ -131,6 +134,7 @@
 		E7FE55ED1AC604560084C8BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E790CD0F1BE682FF004ADB68 /* HomeAR.framework */,
 				E7FE561A1AC8EF160084C8BB /* ImageIO.framework */,
 				E7FE56181AC8EEE50084C8BB /* CoreGraphics.framework */,
 				E7FE56161AC8EEA70084C8BB /* CoreImage.framework */,
