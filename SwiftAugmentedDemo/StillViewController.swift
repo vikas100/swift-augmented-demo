@@ -241,9 +241,10 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBAction func saveClicked(sender: AnyObject) {
         
         //TEMP: Used to clear out color from project
+        let previousColor = stillPainter.paintColor
         stillPainter.setPaintColor(UIColor.clearColor(), updateImage: true)
-        
         projectID = stillPainter.saveProjectToDirectory(savePath, saveState: true)
+        stillPainter.setPaintColor(previousColor, updateImage: true)
         
         print("Project saved to \(savePath)/\(projectID)")
         
