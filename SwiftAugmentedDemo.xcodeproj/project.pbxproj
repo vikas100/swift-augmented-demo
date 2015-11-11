@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E72B33D51BF311C0003A9829 /* Rooms in Resources */ = {isa = PBXBuildFile; fileRef = E753E8AA1BDFFFF3002DA1B2 /* Rooms */; };
 		E7464E3B1B72F8F10091A5A8 /* ourhouse.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E7464E3A1B72F8F10091A5A8 /* ourhouse.jpg */; };
 		E7464E3D1B72FCDC0091A5A8 /* ourhouse1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E7464E3C1B72FCDC0091A5A8 /* ourhouse1.jpg */; };
 		E7464E3F1B730DC80091A5A8 /* traditional-kitchen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E7464E3E1B730DC80091A5A8 /* traditional-kitchen.jpg */; };
 		E7519EC01BA41C5100E97D0C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7519EBF1BA41C5100E97D0C /* GLKit.framework */; };
 		E753E8A91BDFFED7002DA1B2 /* RoomTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753E8A81BDFFED7002DA1B2 /* RoomTypesViewController.swift */; };
-		E753E8AB1BDFFFF3002DA1B2 /* Rooms in Resources */ = {isa = PBXBuildFile; fileRef = E753E8AA1BDFFFF3002DA1B2 /* Rooms */; };
 		E753E8AD1BE00353002DA1B2 /* shutterstock_13368892.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E753E8AC1BE00353002DA1B2 /* shutterstock_13368892.jpg */; };
 		E753E8AF1BE005FD002DA1B2 /* ChooseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753E8AE1BE005FC002DA1B2 /* ChooseImageViewController.swift */; };
 		E770188C1BD0AF9800D319B2 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E770188B1BD0AF9800D319B2 /* libc++.tbd */; };
@@ -201,13 +201,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E72B33D51BF311C0003A9829 /* Rooms in Resources */,
 				E7FE55C01AC5FA740084C8BB /* Main.storyboard in Resources */,
 				E7FE55C51AC5FA740084C8BB /* LaunchScreen.xib in Resources */,
 				E753E8AD1BE00353002DA1B2 /* shutterstock_13368892.jpg in Resources */,
 				E7464E3B1B72F8F10091A5A8 /* ourhouse.jpg in Resources */,
 				E7464E3F1B730DC80091A5A8 /* traditional-kitchen.jpg in Resources */,
 				E7464E3D1B72FCDC0091A5A8 /* ourhouse1.jpg in Resources */,
-				E753E8AB1BDFFFF3002DA1B2 /* Rooms in Resources */,
 				E7FE55C21AC5FA740084C8BB /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,10 +348,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../../cambrian-ios/Platforms/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../../cambrian-ios/Platforms/iOS";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SwiftAugmentedDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -372,10 +369,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../../cambrian-ios/Platforms/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../../cambrian-ios/Platforms/iOS";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SwiftAugmentedDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
