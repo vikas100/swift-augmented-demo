@@ -1,6 +1,0 @@
-framework module HomeAR {
-  umbrella header "HomeAR.h"
-
-  export *
-  module * { export * }
-}

@@ -6,4 +6,4 @@
 //  Copyright (c) 2015 Joel Teply. All rights reserved.
 //
 
-#import <HomeAR/HomeAR.h>
+#import <HomeAugmentation/HomeAugmentation.h>
