@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>SwiftAugmentedRenderer.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -28,6 +33,21 @@
 			<true/>
 		</dict>
 		<key>E786F1DD1BF624E300DFB301</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E786F1FB1BF626C300DFB301</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E786F2191BF626FD00DFB301</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E786F23C1BF6294700DFB301</key>
 		<dict>
 			<key>primary</key>
 			<true/>
