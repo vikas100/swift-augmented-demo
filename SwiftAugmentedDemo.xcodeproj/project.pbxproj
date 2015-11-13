@@ -16,6 +16,27 @@
 		E753E8AD1BE00353002DA1B2 /* shutterstock_13368892.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E753E8AC1BE00353002DA1B2 /* shutterstock_13368892.jpg */; };
 		E753E8AF1BE005FD002DA1B2 /* ChooseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753E8AE1BE005FC002DA1B2 /* ChooseImageViewController.swift */; };
 		E770188C1BD0AF9800D319B2 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E770188B1BD0AF9800D319B2 /* libc++.tbd */; };
+		E786F1DF1BF624E300DFB301 /* StillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE55BC1AC5FA740084C8BB /* StillViewController.swift */; };
+		E786F1E01BF624E300DFB301 /* RoomTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753E8A81BDFFED7002DA1B2 /* RoomTypesViewController.swift */; };
+		E786F1E11BF624E300DFB301 /* AugmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE55FB1AC8E9950084C8BB /* AugmentedViewController.swift */; };
+		E786F1E21BF624E300DFB301 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D623561AEAAE9B003451B5 /* ColorPickerViewController.swift */; };
+		E786F1E31BF624E300DFB301 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE55BA1AC5FA740084C8BB /* AppDelegate.swift */; };
+		E786F1E41BF624E300DFB301 /* ChooseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753E8AE1BE005FC002DA1B2 /* ChooseImageViewController.swift */; };
+		E786F1E61BF624E300DFB301 /* HomeAugmentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7945B5E1BF2F9D00025AA0A /* HomeAugmentation.framework */; };
+		E786F1E71BF624E300DFB301 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E770188B1BD0AF9800D319B2 /* libc++.tbd */; };
+		E786F1E81BF624E300DFB301 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7519EBF1BA41C5100E97D0C /* GLKit.framework */; };
+		E786F1E91BF624E300DFB301 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE561A1AC8EF160084C8BB /* ImageIO.framework */; };
+		E786F1EA1BF624E300DFB301 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE56101AC8ED2C0084C8BB /* AVFoundation.framework */; };
+		E786F1EB1BF624E300DFB301 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE560E1AC8ED240084C8BB /* CoreMotion.framework */; };
+		E786F1EC1BF624E300DFB301 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE55F21AC60AAD0084C8BB /* Accelerate.framework */; };
+		E786F1EE1BF624E300DFB301 /* Rooms in Resources */ = {isa = PBXBuildFile; fileRef = E753E8AA1BDFFFF3002DA1B2 /* Rooms */; };
+		E786F1EF1BF624E300DFB301 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7FE55BE1AC5FA740084C8BB /* Main.storyboard */; };
+		E786F1F01BF624E300DFB301 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FE55C31AC5FA740084C8BB /* LaunchScreen.xib */; };
+		E786F1F11BF624E300DFB301 /* shutterstock_13368892.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E753E8AC1BE00353002DA1B2 /* shutterstock_13368892.jpg */; };
+		E786F1F21BF624E300DFB301 /* ourhouse.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E7464E3A1B72F8F10091A5A8 /* ourhouse.jpg */; };
+		E786F1F31BF624E300DFB301 /* traditional-kitchen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E7464E3E1B730DC80091A5A8 /* traditional-kitchen.jpg */; };
+		E786F1F41BF624E300DFB301 /* ourhouse1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E7464E3C1B72FCDC0091A5A8 /* ourhouse1.jpg */; };
+		E786F1F51BF624E300DFB301 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7FE55C11AC5FA740084C8BB /* Images.xcassets */; };
 		E7945B5F1BF2F9D00025AA0A /* HomeAugmentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7945B5E1BF2F9D00025AA0A /* HomeAugmentation.framework */; };
 		E7C5C0941B1C220300E98293 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE561A1AC8EF160084C8BB /* ImageIO.framework */; };
 		E7D623571AEAAE9B003451B5 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D623561AEAAE9B003451B5 /* ColorPickerViewController.swift */; };
@@ -40,6 +61,9 @@
 		E753E8AC1BE00353002DA1B2 /* shutterstock_13368892.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shutterstock_13368892.jpg; sourceTree = "<group>"; };
 		E753E8AE1BE005FC002DA1B2 /* ChooseImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseImageViewController.swift; sourceTree = "<group>"; };
 		E770188B1BD0AF9800D319B2 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		E786F1DC1BF623BB00DFB301 /* SwiftAugmentedDemo copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAugmentedDemo copy-Info.plist"; path = "/Users/joelteply/Development/cambriantech/demos/swift-augmented-demo/SwiftAugmentedDemo copy-Info.plist"; sourceTree = "<absolute>"; };
+		E786F1F91BF624E300DFB301 /* SwiftAugmentedDemo Tester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftAugmentedDemo Tester.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E786F1FA1BF624E300DFB301 /* SwiftAugmentedDemo copy2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftAugmentedDemo copy2-Info.plist"; path = "/Users/joelteply/Development/cambriantech/demos/swift-augmented-demo/SwiftAugmentedDemo copy2-Info.plist"; sourceTree = "<absolute>"; };
 		E7945B5E1BF2F9D00025AA0A /* HomeAugmentation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeAugmentation.framework; path = "../../../../cambrian-ios/Platforms/iOS/HomeAugmentation.framework"; sourceTree = "<group>"; };
 		E7D623561AEAAE9B003451B5 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		E7FE55B51AC5FA740084C8BB /* SwiftAugmentedDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftAugmentedDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +84,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E786F1E51BF624E300DFB301 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E786F1E61BF624E300DFB301 /* HomeAugmentation.framework in Frameworks */,
+				E786F1E71BF624E300DFB301 /* libc++.tbd in Frameworks */,
+				E786F1E81BF624E300DFB301 /* GLKit.framework in Frameworks */,
+				E786F1E91BF624E300DFB301 /* ImageIO.framework in Frameworks */,
+				E786F1EA1BF624E300DFB301 /* AVFoundation.framework in Frameworks */,
+				E786F1EB1BF624E300DFB301 /* CoreMotion.framework in Frameworks */,
+				E786F1EC1BF624E300DFB301 /* Accelerate.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E7FE55B21AC5FA740084C8BB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -82,6 +120,8 @@
 			children = (
 				E7FE55B71AC5FA740084C8BB /* SwiftAugmentedDemo */,
 				E7FE55B61AC5FA740084C8BB /* Products */,
+				E786F1DC1BF623BB00DFB301 /* SwiftAugmentedDemo copy-Info.plist */,
+				E786F1FA1BF624E300DFB301 /* SwiftAugmentedDemo copy2-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				E7FE55B51AC5FA740084C8BB /* SwiftAugmentedDemo.app */,
+				E786F1F91BF624E300DFB301 /* SwiftAugmentedDemo Tester.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,6 +185,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E786F1DD1BF624E300DFB301 /* SwiftAugmentedDemo Tester */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E786F1F61BF624E300DFB301 /* Build configuration list for PBXNativeTarget "SwiftAugmentedDemo Tester" */;
+			buildPhases = (
+				E786F1DE1BF624E300DFB301 /* Sources */,
+				E786F1E51BF624E300DFB301 /* Frameworks */,
+				E786F1ED1BF624E300DFB301 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SwiftAugmentedDemo Tester";
+			productName = SwiftAugmentedDemo;
+			productReference = E786F1F91BF624E300DFB301 /* SwiftAugmentedDemo Tester.app */;
+			productType = "com.apple.product-type.application";
+		};
 		E7FE55B41AC5FA740084C8BB /* SwiftAugmentedDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7FE55D41AC5FA750084C8BB /* Build configuration list for PBXNativeTarget "SwiftAugmentedDemo" */;
@@ -192,11 +250,27 @@
 			projectRoot = "";
 			targets = (
 				E7FE55B41AC5FA740084C8BB /* SwiftAugmentedDemo */,
+				E786F1DD1BF624E300DFB301 /* SwiftAugmentedDemo Tester */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E786F1ED1BF624E300DFB301 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E786F1EE1BF624E300DFB301 /* Rooms in Resources */,
+				E786F1EF1BF624E300DFB301 /* Main.storyboard in Resources */,
+				E786F1F01BF624E300DFB301 /* LaunchScreen.xib in Resources */,
+				E786F1F11BF624E300DFB301 /* shutterstock_13368892.jpg in Resources */,
+				E786F1F21BF624E300DFB301 /* ourhouse.jpg in Resources */,
+				E786F1F31BF624E300DFB301 /* traditional-kitchen.jpg in Resources */,
+				E786F1F41BF624E300DFB301 /* ourhouse1.jpg in Resources */,
+				E786F1F51BF624E300DFB301 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E7FE55B31AC5FA740084C8BB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -215,6 +289,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E786F1DE1BF624E300DFB301 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E786F1DF1BF624E300DFB301 /* StillViewController.swift in Sources */,
+				E786F1E01BF624E300DFB301 /* RoomTypesViewController.swift in Sources */,
+				E786F1E11BF624E300DFB301 /* AugmentedViewController.swift in Sources */,
+				E786F1E21BF624E300DFB301 /* ColorPickerViewController.swift in Sources */,
+				E786F1E31BF624E300DFB301 /* AppDelegate.swift in Sources */,
+				E786F1E41BF624E300DFB301 /* ChooseImageViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E7FE55B11AC5FA740084C8BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -250,6 +337,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E786F1F71BF624E300DFB301 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../../cambrian-ios/Platforms/iOS";
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = SwiftAugmentedDemo.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiftAugmentedDemo/testing",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cambriantech.SwiftAugmentedTester;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftAugmentedDemo/Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		E786F1F81BF624E300DFB301 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../../cambrian-ios/Platforms/iOS";
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = SwiftAugmentedDemo.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiftAugmentedDemo/testing",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cambriantech.SwiftAugmentedTester;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftAugmentedDemo/Bridging-Header.h";
+			};
+			name = Release;
+		};
 		E7FE55D21AC5FA750084C8BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -353,8 +488,11 @@
 				INFOPLIST_FILE = SwiftAugmentedDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.cambriantech.$(PRODUCT_NAME:rfc1034identifier)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiftAugmentedDemo/testing",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cambriantech.SwiftAugmentedDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftAugmentedDemo/Bridging-Header.h";
@@ -374,8 +512,11 @@
 				INFOPLIST_FILE = SwiftAugmentedDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.cambriantech.$(PRODUCT_NAME:rfc1034identifier)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiftAugmentedDemo/testing",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cambriantech.SwiftAugmentedDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftAugmentedDemo/Bridging-Header.h";
@@ -385,6 +526,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E786F1F61BF624E300DFB301 /* Build configuration list for PBXNativeTarget "SwiftAugmentedDemo Tester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E786F1F71BF624E300DFB301 /* Debug */,
+				E786F1F81BF624E300DFB301 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E7FE55B01AC5FA740084C8BB /* Build configuration list for PBXProject "SwiftAugmentedDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
