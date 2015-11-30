@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F25a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8ma-E7-OMK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8ma-E7-OMK">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -20,6 +20,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0l6-vw-LTj">
                                 <rect key="frame" x="232" y="246" width="136" height="40"/>
+                                <animations/>
                                 <state key="normal" title="Open Still Visualizer">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -27,8 +28,9 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="DWL-1E-TS9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UhY-Ei-f8e">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UhY-Ei-f8e">
                                 <rect key="frame" x="214" y="316" width="172" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Open Augmented Reality">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -38,6 +40,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfm-IW-2H7">
                                 <rect key="frame" x="212" y="377" width="177" height="40"/>
+                                <animations/>
                                 <state key="normal" title="Open Color From Camera">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -46,6 +49,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="tfm-IW-2H7" secondAttribute="centerX" constant="-0.5" id="Ffc-VC-ccS"/>
@@ -76,10 +80,12 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ZW-eR-nls" userLabel="ImagePainter" customClass="CBImagePainter">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y1Y-3K-38t" userLabel="Accessory Toolbar">
                                 <rect key="frame" x="0.0" y="67" width="600" height="44"/>
+                                <animations/>
                                 <items>
                                     <barButtonItem enabled="NO" title="Cancel" id="MFd-9m-bHn">
                                         <connections>
@@ -100,8 +106,9 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="YHr-ZF-Lv8">
                                         <view key="customView" contentMode="scaleToFill" id="3OK-vz-WXr">
-                                            <rect key="frame" x="554" y="5.5" width="30" height="30"/>
+                                            <rect key="frame" x="550" y="7" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
                                     </barButtonItem>
@@ -109,6 +116,7 @@
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wh7-0G-uf5" userLabel="Zoom Menu">
                                 <rect key="frame" x="0.0" y="113" width="600" height="44"/>
+                                <animations/>
                                 <items>
                                     <barButtonItem title="Stop Scrolling" id="5pz-bV-X2O">
                                         <connections>
@@ -126,6 +134,7 @@
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zpk-5f-tSQ" userLabel="Main Tools">
                                 <rect key="frame" x="0.0" y="555" width="600" height="44"/>
+                                <animations/>
                                 <items>
                                     <barButtonItem title="Get Image" id="C0V-Ke-abe">
                                         <connections>
@@ -165,6 +174,7 @@
                                 </items>
                             </toolbar>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7ZW-eR-nls" firstAttribute="leading" secondItem="Lgc-8D-9lX" secondAttribute="leading" id="46o-uq-hx3"/>
@@ -208,11 +218,99 @@
                         <outlet property="zoomMenu" destination="wh7-0G-uf5" id="RLO-q9-pTj"/>
                         <outlet property="zoomOutButton" destination="eaK-zs-tDk" id="ibu-AF-s6a"/>
                         <outlet property="zoomStartStopPaintingButton" destination="5pz-bV-X2O" id="D0P-Vq-mRV"/>
+                        <segue destination="36z-eJ-tBt" kind="show" identifier="showRoomTypes" id="W7i-Ju-Sup"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1764" y="-512"/>
+        </scene>
+        <!--Room Types View Controller-->
+        <scene sceneID="VRK-a8-FMh">
+            <objects>
+                <tableViewController id="36z-eJ-tBt" customClass="RoomTypesViewController" customModule="SwiftAugmentedDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gOb-Jb-uej">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="CZw-sb-JPA">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CZw-sb-JPA" id="A7B-wn-uCc">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="36z-eJ-tBt" id="OgI-nI-173"/>
+                            <outlet property="delegate" destination="36z-eJ-tBt" id="IEy-WG-w7u"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="HVN-FQ-paM" kind="show" identifier="chooseImage" id="Lwz-mO-9sQ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2JF-3h-CLx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2534" y="-844"/>
+        </scene>
+        <!--Choose Image View Controller-->
+        <scene sceneID="o48-yp-7EH">
+            <objects>
+                <collectionViewController id="HVN-FQ-paM" customClass="ChooseImageViewController" customModule="SwiftAugmentedDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="rPl-OG-H4v">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uDg-7H-dnd">
+                            <size key="itemSize" width="177" height="133"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="10" contentMode="center" reuseIdentifier="ImageCell" id="tbh-CK-OAO" userLabel="imageCell">
+                                <rect key="frame" x="0.0" y="64" width="177" height="133"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="177" height="133"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4gx-7K-yqg">
+                                            <rect key="frame" x="0.0" y="0.0" width="177" height="128"/>
+                                            <animations/>
+                                        </imageView>
+                                    </subviews>
+                                    <animations/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="4gx-7K-yqg" firstAttribute="leading" secondItem="tbh-CK-OAO" secondAttribute="leadingMargin" id="Bq8-CB-OFR"/>
+                                    <constraint firstItem="4gx-7K-yqg" firstAttribute="height" secondItem="tbh-CK-OAO" secondAttribute="height" id="CFs-AC-YRT"/>
+                                    <constraint firstAttribute="topMargin" secondItem="4gx-7K-yqg" secondAttribute="top" id="hNi-fv-rn5"/>
+                                    <constraint firstItem="4gx-7K-yqg" firstAttribute="width" secondItem="tbh-CK-OAO" secondAttribute="width" id="lPj-5i-9iT"/>
+                                </constraints>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="HVN-FQ-paM" id="c8j-7v-ZQk"/>
+                            <outlet property="delegate" destination="HVN-FQ-paM" id="qyd-u4-mTO"/>
+                        </connections>
+                    </collectionView>
+                    <connections>
+                        <segue destination="saH-gR-HDf" kind="unwind" identifier="unwindToPainter" unwindAction="returnFromImageChoice:" id="8xw-LH-gJ3"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nXz-2d-LoM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="saH-gR-HDf" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3345" y="-844"/>
         </scene>
         <!--Color Picker View Controller-->
         <scene sceneID="cny-gW-f4v">
@@ -225,6 +323,7 @@
                     <view key="view" contentMode="scaleToFill" id="K3T-Zf-EjL" userLabel="View" customClass="CBColorFinder">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
@@ -249,14 +348,17 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cjr-RR-OdQ" userLabel="Augmented View">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwS-UX-bH4" userLabel="Still View" customClass="CBImagePainter">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hY0-D9-qrQ" userLabel="Main Tools">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hY0-D9-qrQ" userLabel="Main Tools">
                                 <rect key="frame" x="0.0" y="555" width="600" height="44"/>
+                                <animations/>
                                 <items>
                                     <barButtonItem title="Undo" id="6fm-gF-1vG">
                                         <connections>
@@ -283,15 +385,17 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="L4V-uf-7Du">
                                         <view key="customView" contentMode="scaleToFill" id="A3s-te-QTQ" userLabel="ColorView">
-                                            <rect key="frame" x="554" y="5.5" width="30" height="30"/>
+                                            <rect key="frame" x="550" y="7" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ml4-2M-s5S" userLabel="Zoom Menu">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ml4-2M-s5S" userLabel="Zoom Menu">
                                 <rect key="frame" x="0.0" y="67" width="600" height="44"/>
+                                <animations/>
                                 <items>
                                     <barButtonItem title="Stop Scrolling" id="s8o-xN-xFL">
                                         <connections>
@@ -308,6 +412,7 @@
                                 </items>
                             </toolbar>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ml4-2M-s5S" firstAttribute="width" secondItem="79j-jE-OVE" secondAttribute="width" id="3Ke-05-9Kh"/>
@@ -363,6 +468,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fWd-C0-qPS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -375,6 +481,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Mj0-qS-ca4"/>
+        <segue reference="DWL-1E-TS9"/>
     </inferredMetricsTieBreakers>
 </document>
