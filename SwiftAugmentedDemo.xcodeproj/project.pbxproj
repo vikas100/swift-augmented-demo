@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E72B33D51BF311C0003A9829 /* Rooms in Resources */ = {isa = PBXBuildFile; fileRef = E753E8AA1BDFFFF3002DA1B2 /* Rooms */; };
+		E7449B3A1C0CBE2100E6F88E /* HomeAugmentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7449B391C0CBE2100E6F88E /* HomeAugmentation.framework */; };
 		E7464E3B1B72F8F10091A5A8 /* ourhouse.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E7464E3A1B72F8F10091A5A8 /* ourhouse.jpg */; };
 		E7464E3D1B72FCDC0091A5A8 /* ourhouse1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E7464E3C1B72FCDC0091A5A8 /* ourhouse1.jpg */; };
 		E7464E3F1B730DC80091A5A8 /* traditional-kitchen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E7464E3E1B730DC80091A5A8 /* traditional-kitchen.jpg */; };
@@ -22,7 +23,6 @@
 		E786F2411BF6294700DFB301 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D623561AEAAE9B003451B5 /* ColorPickerViewController.swift */; };
 		E786F2421BF6294700DFB301 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE55BA1AC5FA740084C8BB /* AppDelegate.swift */; };
 		E786F2431BF6294700DFB301 /* ChooseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753E8AE1BE005FC002DA1B2 /* ChooseImageViewController.swift */; };
-		E786F2451BF6294700DFB301 /* HomeAugmentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7945B5E1BF2F9D00025AA0A /* HomeAugmentation.framework */; };
 		E786F2461BF6294700DFB301 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E770188B1BD0AF9800D319B2 /* libc++.tbd */; };
 		E786F2471BF6294700DFB301 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7519EBF1BA41C5100E97D0C /* GLKit.framework */; };
 		E786F2481BF6294700DFB301 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE561A1AC8EF160084C8BB /* ImageIO.framework */; };
@@ -38,9 +38,6 @@
 		E786F2531BF6294700DFB301 /* ourhouse1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E7464E3C1B72FCDC0091A5A8 /* ourhouse1.jpg */; };
 		E786F2541BF6294700DFB301 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7FE55C11AC5FA740084C8BB /* Images.xcassets */; };
 		E786F25B1BF6298A00DFB301 /* SwiftAugmentedRenderer-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E786F25A1BF6298A00DFB301 /* SwiftAugmentedRenderer-Info.plist */; };
-		E786F2621BF62D0D00DFB301 /* libHomeAugmentation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E786F2611BF62D0D00DFB301 /* libHomeAugmentation.a */; };
-		E786F2631BF62D2700DFB301 /* libHomeAugmentation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E786F2611BF62D0D00DFB301 /* libHomeAugmentation.a */; };
-		E7945B5F1BF2F9D00025AA0A /* HomeAugmentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7945B5E1BF2F9D00025AA0A /* HomeAugmentation.framework */; };
 		E7C5C0941B1C220300E98293 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE561A1AC8EF160084C8BB /* ImageIO.framework */; };
 		E7D623571AEAAE9B003451B5 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D623561AEAAE9B003451B5 /* ColorPickerViewController.swift */; };
 		E7FE55BB1AC5FA740084C8BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE55BA1AC5FA740084C8BB /* AppDelegate.swift */; };
@@ -55,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E7449B391C0CBE2100E6F88E /* HomeAugmentation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HomeAugmentation.framework; sourceTree = "<group>"; };
 		E7464E3A1B72F8F10091A5A8 /* ourhouse.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ourhouse.jpg; sourceTree = "<group>"; };
 		E7464E3C1B72FCDC0091A5A8 /* ourhouse1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ourhouse1.jpg; sourceTree = "<group>"; };
 		E7464E3E1B730DC80091A5A8 /* traditional-kitchen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "traditional-kitchen.jpg"; sourceTree = "<group>"; };
@@ -66,8 +64,6 @@
 		E770188B1BD0AF9800D319B2 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		E786F2581BF6294700DFB301 /* SwiftAugmentedRenderer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftAugmentedRenderer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E786F25A1BF6298A00DFB301 /* SwiftAugmentedRenderer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SwiftAugmentedRenderer-Info.plist"; sourceTree = SOURCE_ROOT; };
-		E786F2611BF62D0D00DFB301 /* libHomeAugmentation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libHomeAugmentation.a; path = "../../cambrian-ios/HomeAugmentationFramework/build/Debug-iphoneos/libHomeAugmentation.a"; sourceTree = "<group>"; };
-		E7945B5E1BF2F9D00025AA0A /* HomeAugmentation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeAugmentation.framework; path = "../../../../cambrian-ios/Platforms/iOS/HomeAugmentation.framework"; sourceTree = "<group>"; };
 		E7D623561AEAAE9B003451B5 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		E7FE55B51AC5FA740084C8BB /* SwiftAugmentedDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftAugmentedDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7FE55B91AC5FA740084C8BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,8 +87,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E786F2631BF62D2700DFB301 /* libHomeAugmentation.a in Frameworks */,
-				E786F2451BF6294700DFB301 /* HomeAugmentation.framework in Frameworks */,
 				E786F2461BF6294700DFB301 /* libc++.tbd in Frameworks */,
 				E786F2471BF6294700DFB301 /* GLKit.framework in Frameworks */,
 				E786F2481BF6294700DFB301 /* ImageIO.framework in Frameworks */,
@@ -106,14 +100,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E786F2621BF62D0D00DFB301 /* libHomeAugmentation.a in Frameworks */,
-				E7945B5F1BF2F9D00025AA0A /* HomeAugmentation.framework in Frameworks */,
 				E770188C1BD0AF9800D319B2 /* libc++.tbd in Frameworks */,
 				E7519EC01BA41C5100E97D0C /* GLKit.framework in Frameworks */,
 				E7C5C0941B1C220300E98293 /* ImageIO.framework in Frameworks */,
 				E7FE56111AC8ED2C0084C8BB /* AVFoundation.framework in Frameworks */,
 				E7FE560F1AC8ED240084C8BB /* CoreMotion.framework in Frameworks */,
 				E7FE55F31AC60AAD0084C8BB /* Accelerate.framework in Frameworks */,
+				E7449B3A1C0CBE2100E6F88E /* HomeAugmentation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,7 +116,7 @@
 		E7FE55AC1AC5FA740084C8BB = {
 			isa = PBXGroup;
 			children = (
-				E786F2611BF62D0D00DFB301 /* libHomeAugmentation.a */,
+				E7449B391C0CBE2100E6F88E /* HomeAugmentation.framework */,
 				E7FE55B71AC5FA740084C8BB /* SwiftAugmentedDemo */,
 				E7FE55B61AC5FA740084C8BB /* Products */,
 			);
@@ -174,7 +167,6 @@
 		E7FE55ED1AC604560084C8BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E7945B5E1BF2F9D00025AA0A /* HomeAugmentation.framework */,
 				E770188B1BD0AF9800D319B2 /* libc++.tbd */,
 				E7519EBF1BA41C5100E97D0C /* GLKit.framework */,
 				E7FE561A1AC8EF160084C8BB /* ImageIO.framework */,
@@ -489,7 +481,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../../cambrian-ios/Platforms/iOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../../cambrian-ios/Platforms/iOS",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SwiftAugmentedDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -510,7 +505,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../../cambrian-ios/Platforms/iOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../../cambrian-ios/Platforms/iOS",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SwiftAugmentedDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

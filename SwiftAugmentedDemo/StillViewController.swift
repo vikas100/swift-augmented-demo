@@ -28,7 +28,7 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
     var colorA = UIColor(red: 0.9, green: 0.5, blue: 0.3, alpha: 1.0) //Cambrian blue
     //var colorB = UIColor(red: 0.9, green: 0.5, blue: 0.3, alpha: 1.0) //HD Orange
     //var colorB = UIColor(red: 0.6941176471, green: 0.6431372549, blue: 0.568627451, alpha: 1.0) //Tony Taupe
-    var colorB = UIColor(red: 1.0, green:0.95, blue: 0.87, alpha: 1.0)
+    var colorB = UIColor(red: 1.0, green:1.0, blue: 1.0, alpha: 1.0)
     
     var imageToLoad: CBImagePainterImage?
     
@@ -255,7 +255,7 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     //load project clicked
     @IBAction func loadClicked(sender: AnyObject) {
-        stillPainter.loadProject(projectID, fromDirectory: savePath)
+        stillPainter.loadProject("c7a2a1f6-af34-4f9b-8a6e-2c1c197b84cd", fromDirectory: savePath)
     }
     
     func setZoomMenuTexts() {
