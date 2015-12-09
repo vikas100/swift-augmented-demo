@@ -13,6 +13,8 @@
 
 @interface CBCombinedPainter : CBImagePainter
 
+@property (readonly, nonatomic) BOOL isShowingAugmentedReality;
+
 - (void) startAugmentedReality;
 - (void) stopAugmentedReality;
 - (void) captureToImagePainter:(void (^)(void))block;

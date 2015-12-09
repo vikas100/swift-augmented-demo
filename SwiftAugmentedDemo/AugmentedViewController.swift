@@ -114,7 +114,7 @@ class AugmentedViewController: UIViewController, CBVideoDeviceDelegate {
     
     //when clicked, clear all points currently selected
     @IBAction func clearPointsClicked(sender: AnyObject) {
-        videoPainter.clearPaintPoints()
+        videoPainter.clearAll()
         stillPainter.clearAll()
     }
     

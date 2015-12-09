@@ -17,13 +17,11 @@
 @property (nonatomic, strong) UIColor *paintColor;
 @property (nonatomic, assign) BOOL useDefaultColor;
 
-@property (nonatomic, copy) void(^deniedCameraAccessBlock)();
-
 - (BOOL)captureCurrentState:(CBImagePainter*)imagePainter completed:(void (^)(void))block;
 - (BOOL)captureCurrentState:(void (^)(CBImagePainterImage *))block;
 
 - (void) startRecording;
 - (void) finishRecordingWithBlock:(void (^)(NSURL *file))block;
-- (void) clearPaintPoints;
+- (void) clearAll;
 
 @end

@@ -27,6 +27,7 @@
 + (UIImage *)getPreview:(NSString *)path;
 + (UIImage *)getThumbnail:(NSString *)path;
 + (NSDictionary *) getUserData:(NSString *)path;
++ (BOOL) setUserData:(NSDictionary *)userData path:(NSString *)path;
 + (BOOL) removeProjectDirectory:(NSString *)path;
 
 + (UIImage*)image:(UIImage *)sourceImage constrainedToSize:(CGSize)maxSize;

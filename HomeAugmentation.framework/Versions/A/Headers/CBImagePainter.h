@@ -26,6 +26,7 @@
 
 //Material choices
 @property (retain, nonatomic) UIColor *paintColor;
+@property (readonly, nonatomic) NSString *projectID;
 
 //Global appearance
 @property (assign, nonatomic) LightingType simulatedLighting;
@@ -57,9 +58,10 @@
 @property (nonatomic, copy) void(^busyLoadingBlock)(BOOL completed);
 
 @property (nonatomic, copy) BOOL(^shouldStartToolBlock)(ToolMode tool);
-@property (nonatomic, copy) void(^historyChangedBlock)(void);
 @property (nonatomic, copy) void(^startedToolBlock)(ToolMode tool);
 @property (nonatomic, copy) void(^finishedToolBlock)(ToolMode tool);
+
+@property (nonatomic, copy) void(^historyChangedBlock)(void);
 
 @property (nonatomic, copy) void(^scrolledContentsBlock)();
 @property (nonatomic, copy) void(^zoomingStartedBlock)();
@@ -69,6 +71,8 @@
 
 - (BOOL) loadProject:(NSString *)projectID fromDirectory:(NSString *)directoryPath;
 - (NSString *) saveProjectToDirectory:(NSString *)directoryPath saveState:(BOOL)saveState;
+
++ (NSString *) cloneProject:(NSString *)path projectID:(NSString *)projectID;
 
 - (void) setPaintColor:(UIColor *)uiColor updateImage:(BOOL)updateImage;
 
