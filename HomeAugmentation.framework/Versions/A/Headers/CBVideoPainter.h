@@ -15,7 +15,6 @@
 @property (nonatomic, assign) BOOL showOutlines;
 @property (nonatomic, assign) CGPoint paintPoint;
 @property (nonatomic, strong) UIColor *paintColor;
-@property (nonatomic, assign) BOOL useDefaultColor;
 
 - (BOOL)captureCurrentState:(CBImagePainter*)imagePainter completed:(void (^)(void))block;
 - (BOOL)captureCurrentState:(void (^)(CBImagePainterImage *))block;

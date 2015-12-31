@@ -16,6 +16,8 @@
 
 + (id)sharedInstance;
 
+- (id) getObjectWithID:(NSManagedObjectID *)objectID;
+
 - (id) getObjectWithUrl:(NSURL *)url;
 
 - (id) getFirstRecordForClass:(Class)inClass

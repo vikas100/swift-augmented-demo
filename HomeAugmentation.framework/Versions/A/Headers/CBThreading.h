@@ -16,4 +16,9 @@
               onQueue:(dispatch_queue_t)queue
        withIdentifier:(NSString *) identifier;
 
++ (void) performBlock:(void (^)(void))block
+              onQueue:(dispatch_queue_t)queue
+       withIdentifier:(NSString *) identifier
+             interval:(NSTimeInterval)interval;
+
 @end

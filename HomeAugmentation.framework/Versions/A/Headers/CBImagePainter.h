@@ -31,7 +31,6 @@
 //Global appearance
 @property (assign, nonatomic) LightingType simulatedLighting;
 
-@property (assign, nonatomic) BOOL useDefaultColor;
 @property (assign, nonatomic) BOOL autoBrushSizeEnabled;
 @property (assign, nonatomic) BOOL brushTapFillEnabled;
 @property (assign, nonatomic) BOOL smartBrushEnabled;
@@ -43,7 +42,7 @@
 @property (assign, nonatomic) BOOL canZoom;
 @property (readonly, nonatomic) CGFloat zoomScale;
 @property (readonly, nonatomic) BOOL canStepBackward;
-@property (readonly, nonatomic) BOOL hasMadeChanges;
+@property (assign, nonatomic) BOOL hasMadeChanges;
 @property (readonly, nonatomic) BOOL hasChangesToCommit;
 
 @property (readonly, nonatomic) int layerCount;
