@@ -72,6 +72,7 @@ class AugmentedViewController: UIViewController, CBVideoDeviceDelegate {
 
         //iniitialize a new instance of video painter
         videoPainter = CBVideoPainter(cameraAtPosition: AVCaptureDevicePosition.Back, delegate: self)
+        videoPainter.paintColor = colorA
         
         self.zoomMenu.hidden = true
         setZoomMenuTexts()
