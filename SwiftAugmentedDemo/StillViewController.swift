@@ -106,10 +106,6 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
         self.undoButton.enabled = self.stillPainter.canStepBackward
     }
     
-    override func viewDidAppear(animated: Bool) {
-        changeColor(colorA)
-    }
-    
     //UI button click events
     @IBAction func decommitClicked(sender: AnyObject) {
         self.stillPainter.decommitChanges();
@@ -189,6 +185,7 @@ class StillViewController: UIViewController, UIImagePickerControllerDelegate, UI
     func loadImage(image: UIImage!, hasMasking: Bool) {
         self.stillPainter.loadImage(image, hasAlphaMasking: hasMasking)
         hasImage = true
+        changeColor(colorA)
         undoButton.enabled = self.stillPainter.canStepBackward
     }
     
