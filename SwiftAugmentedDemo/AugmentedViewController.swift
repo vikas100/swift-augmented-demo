@@ -8,15 +8,16 @@
 
 import UIKit
 import AVFoundation
+import GLKit
 
-class AugmentedViewController: UIViewController, CBVideoDeviceDelegate {
+class AugmentedViewController: UIViewController {
     
     var videoPainter: CBVideoPainter!
     var savedPainterImage: CBImagePainterImage!
     let kVideoToImageSegueIdentifier = "StillViewSegue"
     var gotoStillView = true
     
-    @IBOutlet weak var augmentedView: UIView!
+    @IBOutlet weak var augmentedView: GLKView!
     @IBOutlet weak var stillPainter: CBImagePainter!
     
     @IBOutlet weak var zoomMenu: UIToolbar!
@@ -31,18 +32,18 @@ class AugmentedViewController: UIViewController, CBVideoDeviceDelegate {
     var colorA = UIColor(red: 0.9, green: 0.5, blue: 0.3, alpha: 1.0)
     var colorB = UIColor(red: 0.9, green: 0.5, blue: 0.3, alpha: 1.0)
     
-    @IBAction func startStopScrollingClicked(sender: AnyObject) {
+    @IBAction func startStopScrollingClicked(_ sender: AnyObject) {
         self.stillPainter.touchPaintEnabled = !self.stillPainter.touchPaintEnabled
         
         setZoomMenuTexts()
     }
     
-    @IBAction func zoomOutButtonClicked(sender: AnyObject) {
+    @IBAction func zoomOutButtonClicked(_ sender: AnyObject) {
         self.stillPainter.zoomOut()
     }
     
     var isColorA = true
-    @IBAction func changeColorClicked(sender: AnyObject) {
+    @IBAction func changeColorClicked(_ sender: AnyObject) {
         if (isColorA) {
             changeColor(colorB)
         } else {
@@ -52,13 +53,13 @@ class AugmentedViewController: UIViewController, CBVideoDeviceDelegate {
     }
     
     //undo button clicked
-    @IBAction func undoClicked(sender: AnyObject) {
+    @IBAction func undoClicked(_ sender: AnyObject) {
         if (self.videoPainter.isRunning) {
             return
         }
             
         self.stillPainter.stepBackward()
-        self.undoButton.enabled = self.stillPainter.canStepBackward
+        self.undoButton.isEnabled = self.stillPainter.canStepBackward
     }
     
     deinit {
@@ -71,19 +72,19 @@ class AugmentedViewController: UIViewController, CBVideoDeviceDelegate {
         super.viewDidLoad()
 
         //iniitialize a new instance of video painter
-        videoPainter = CBVideoPainter(cameraAtPosition: AVCaptureDevicePosition.Back, delegate: self)
+        videoPainter = CBVideoPainter()
         videoPainter.paintColor = colorA
         
-        self.zoomMenu.hidden = true
+        self.zoomMenu.isHidden = true
         setZoomMenuTexts()
         
         colorA = stillPainter.paintColor
-        stillPainter.contentMode = UIViewContentMode.ScaleAspectFit
+        stillPainter.contentMode = UIViewContentMode.scaleAspectFit
         currentColorView.backgroundColor = stillPainter.paintColor
         
         stillPainter.zoomingCompletedBlock = ({[weak self] in
             if let strongSelf = self {
-                strongSelf.zoomMenu.hidden = (strongSelf.stillPainter.zoomScale == 1.0)
+                strongSelf.zoomMenu.isHidden = (strongSelf.stillPainter.zoomScale == 1.0)
                 strongSelf.setZoomMenuTexts()
             }
         })
@@ -91,12 +92,12 @@ class AugmentedViewController: UIViewController, CBVideoDeviceDelegate {
         //when the undo history has changed, check to see if we can undo
         stillPainter.historyChangedBlock = ({[weak self] in
             if let strongSelf = self {
-                strongSelf.undoButton.enabled = strongSelf.stillPainter.canStepBackward
+                strongSelf.undoButton.isEnabled = strongSelf.stillPainter.canStepBackward
             }
         })
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
         augmentedView.frame = self.view.frame
@@ -109,60 +110,60 @@ class AugmentedViewController: UIViewController, CBVideoDeviceDelegate {
         
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         startStopAugmentedReality(false)
     }
     
     //when clicked, clear all points currently selected
-    @IBAction func clearPointsClicked(sender: AnyObject) {
+    @IBAction func clearPointsClicked(_ sender: AnyObject) {
         videoPainter.clearAll()
         stillPainter.clearAll()
     }
     
-    @IBAction func startStopClicked(sender: AnyObject) {
+    @IBAction func startStopClicked(_ sender: AnyObject) {
         
         startStopAugmentedReality(!videoPainter.isRunning)
     }
     
-    func startStopAugmentedReality(start:Bool) {
+    func startStopAugmentedReality(_ start:Bool) {
         if (start) {
-            self.stillPainter.hidden = true
+            self.stillPainter.isHidden = true
             captureButton.title = "Capture"
-            videoPainter.output!.hidden = false
+            videoPainter.output!.isHidden = false
             videoPainter.startRunning()
         }
         else {
-            self.stillPainter.hidden = true
+            self.stillPainter.isHidden = true
             captureButton.title = "Retake"
             videoPainter.stopRunning()
-            videoPainter.output!.hidden = true
+            videoPainter.output!.isHidden = true
         }
     }
     
     //when clicked, clear all points currently selected
-    @IBAction func captureClicked(sender: AnyObject) {
+    @IBAction func captureClicked(_ sender: AnyObject) {
         
         if (!self.videoPainter.isRunning) {
             startStopAugmentedReality(true)
         }
         else if (gotoStillView) {
 
-            self.videoPainter.captureCurrentState({(imageWithMask: CBImagePainterImage!) -> Void in
+            self.videoPainter.captureCurrentState({(imageWithMask: CBImagePainterImage?) -> Void in
                 self.savedPainterImage = imageWithMask
                 self.startStopAugmentedReality(false)
-                self.performSegueWithIdentifier(self.kVideoToImageSegueIdentifier, sender: self)
+                self.performSegue(withIdentifier: self.kVideoToImageSegueIdentifier, sender: self)
             })
         } else {
             self.videoPainter.captureCurrentState(self.stillPainter, completed: { () -> Void in
                 self.startStopAugmentedReality(false)
-                self.stillPainter.hidden = false
+                self.stillPainter.isHidden = false
             })
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == kVideoToImageSegueIdentifier {
-            let imagePaintViewController = segue.destinationViewController as! StillViewController
+            let imagePaintViewController = segue.destination as! StillViewController
             imagePaintViewController.imageToLoad = self.savedPainterImage
         }
     }
@@ -177,9 +178,9 @@ class AugmentedViewController: UIViewController, CBVideoDeviceDelegate {
     }
     
     //change the CBImagePainter image and also the current displayed color swatch
-    func changeColor(color:UIColor) {
+    func changeColor(_ color:UIColor) {
         videoPainter.paintColor = color
-        stillPainter.setPaintColor(color, updateImage: true)
+        stillPainter.setPaint(color, updateImage: true)
         currentColorView.backgroundColor = color
     }
 }

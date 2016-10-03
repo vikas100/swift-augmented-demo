@@ -11,7 +11,7 @@ import UIKit
 private let reuseIdentifier = "ImageCell"
 
 internal protocol ChooseImageDelegate : NSObjectProtocol {
-    func imageChosen(image : UIImage)
+    func imageChosen(_ image : UIImage)
 }
 
 class ChooseImageViewController: UICollectionViewController {
@@ -29,16 +29,16 @@ class ChooseImageViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillAppear(animated: Bool) {
-        imagesPath = NSBundle.mainBundle().pathForResource("Rooms/" + self.roomDirectoryName, ofType: nil)
+    override func viewWillAppear(_ animated: Bool) {
+        imagesPath = Bundle.main.path(forResource: "Rooms/" + self.roomDirectoryName, ofType: nil)
         
         do {
-            try imageNames = NSFileManager.defaultManager().contentsOfDirectoryAtPath(imagesPath!)
+            try imageNames = FileManager.default.contentsOfDirectory(atPath: imagesPath!) as NSArray
         }
         catch let error as NSError {
             error.description
@@ -47,23 +47,23 @@ class ChooseImageViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
 
 
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageNames.count
     }
 
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: cell.frame.size.width, height: cell.frame.size.height))
-        let imagePath = "\(imagesPath)/\(imageNames[indexPath.row] as! String)"
+        let imagePath = "\(imagesPath)/\(imageNames[(indexPath as NSIndexPath).row] as! String)"
         
         imageView.image = UIImage(contentsOfFile: imagePath)
-        imageView.backgroundColor = UIColor.redColor()
+        imageView.backgroundColor = UIColor.red
         cell.contentView.addSubview(imageView)
 
         return cell
@@ -71,11 +71,11 @@ class ChooseImageViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDelegate
 
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let cell = collectionView.cellForItemAtIndexPath(indexPath)
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
         if let imageView = cell?.contentView.subviews[0] as? UIImageView {
             self.delegate?.imageChosen(imageView.image!)
-            performSegueWithIdentifier("unwindToPainter", sender: self)
+            performSegue(withIdentifier: "unwindToPainter", sender: self)
         }
     }
 

@@ -31,12 +31,12 @@ class ColorPickerViewController: UIViewController, UIImagePickerControllerDelega
         picker.allowsEditing = false
         
         currentColorView.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        currentColorView.hidden = true
+        currentColorView.isHidden = true
         
         view.addSubview(currentColorView)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
         //load an image if none yet
@@ -45,18 +45,18 @@ class ColorPickerViewController: UIViewController, UIImagePickerControllerDelega
             getImage()
         }
         else if (asked && colorFinder.image == nil) {
-            self.navigationController!.popViewControllerAnimated(true)
+            self.navigationController!.popViewController(animated: true)
         }
         
         colorFinder.colorTouchedAtPoint = ({
             [weak self]
-            (touchType: TouchStep, point:CGPoint, color:UIColor!) in
+            (touchType: TouchStep, point:CGPoint, color:UIColor?) in
             
             if let strongSelf = self {
                 if (touchType.rawValue == TouchStepEnded.rawValue) {
-                    strongSelf.currentColorView.hidden = true
+                    strongSelf.currentColorView.isHidden = true
                 } else {
-                    strongSelf.currentColorView.hidden = false
+                    strongSelf.currentColorView.isHidden = false
                     strongSelf.currentColorView.backgroundColor = color
                     strongSelf.currentColorView.frame = CGRect(x: point.x + 50, y: point.y - 50,
                         width: strongSelf.currentColorView.frame.width, height: strongSelf.currentColorView.frame.height)
@@ -66,44 +66,44 @@ class ColorPickerViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     //iPhone camera and library delegate methods
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
         
         loadImage(chosenImage)
         
-        dismissViewControllerAnimated(true, completion: nil) //5
+        dismiss(animated: true, completion: nil) //5
     }
     
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        dismissViewControllerAnimated(true, completion: nil)
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
     
     //get image clicked or called internally
     @IBAction func getImage() {
-        let alert = UIAlertController(title: "Image Source", message: "Pick an initial image source", preferredStyle: UIAlertControllerStyle.Alert);
+        let alert = UIAlertController(title: "Image Source", message: "Pick an initial image source", preferredStyle: UIAlertControllerStyle.alert);
         
         
-        if (UIImagePickerController.isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Rear)) {
-            alert.addAction(UIAlertAction(title: "Device Camera", style: UIAlertActionStyle.Default, handler: { action in
-                self.picker.sourceType = .Camera
-                self.presentViewController(self.picker, animated: true, completion: nil)
+        if (UIImagePickerController.isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.rear)) {
+            alert.addAction(UIAlertAction(title: "Device Camera", style: UIAlertActionStyle.default, handler: { action in
+                self.picker.sourceType = .camera
+                self.present(self.picker, animated: true, completion: nil)
             }));
         }
         
-        alert.addAction(UIAlertAction(title: "Library", style: UIAlertActionStyle.Default, handler: { action in
-            self.picker.sourceType = .PhotoLibrary
-            self.presentViewController(self.picker, animated: true, completion: nil)
+        alert.addAction(UIAlertAction(title: "Library", style: UIAlertActionStyle.default, handler: { action in
+            self.picker.sourceType = .photoLibrary
+            self.present(self.picker, animated: true, completion: nil)
         }));
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: { action in
-            self.navigationController!.popViewControllerAnimated(true)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: { action in
+            self.navigationController!.popViewController(animated: true)
         }));
         
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     
     //load an image into painter
-    func loadImage(image: UIImage!) {
+    func loadImage(_ image: UIImage!) {
         colorFinder.image = image
     }
 }
